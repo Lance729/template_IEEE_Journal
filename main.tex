@@ -1,0 +1,185 @@
+\documentclass[lettersize,journal]{IEEEtran}
+% \usepackage[style=authoryear, backend=biber]{biblatex}
+% \addbibresource{re.bib} % 替换为你的参考文献数据库文件名
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{cite}
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+% updated with editorial comments 8/9/2021
+
+\begin{document}
+
+\title{A Sample Article Using IEEEtran.cls\\ for IEEE Journals and Transactions}
+
+\author{IEEE Publication Technology,~\IEEEmembership{Staff,~IEEE,}
+  % <-this % stops a space
+\thanks{This paper was produced by the IEEE Publication Technology Group. They are in Piscataway, NJ.}% <-this % stops a space
+\thanks{Manuscript received April 19, 2021; revised August 16, 2021.}}
+
+% The paper headers
+
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+
+\section{The Design, Intent, and \\ Limitations of the Templates}
+
+
+\section{Where to Get \LaTeX \ Help --- User Groups}
+
+
+\section{Other Resources}
+
+
+\section{Text}
+
+
+
+\section{Some Common Elements}
+\subsection{Sections and Subsections}
+
+
+\subsection{Citations to the Bibliography}
+
+
+\subsection{Lists}
+In this section, we will consider three types of lists: simple unnumbered, numbered, and bulleted. There have been many options added to IEEEtran to enhance the creation of lists. If your lists are more complex than those shown below, please refer to the original ``IEEEtran\_HOWTO.pdf'' for additional options.\\
+
+\subsubsection*{\bf A plain  unnumbered list}
+% \begin{list}{}{}
+% \item{bare\_jrnl.tex}
+% \item{bare\_conf.tex}
+% \item{bare\_jrnl\_compsoc.tex}
+% \item{bare\_conf\_compsoc.tex}
+% \item{bare\_jrnl\_comsoc.tex}
+% \end{list}
+
+% \subsubsection*{\bf A simple numbered list}
+% \begin{enumerate}
+% \item{bare\_jrnl.tex}
+% \item{bare\_conf.tex}
+% \item{bare\_jrnl\_compsoc.tex}
+% \item{bare\_conf\_compsoc.tex}
+% \item{bare\_jrnl\_comsoc.tex}
+% \end{enumerate}
+
+% \subsubsection*{\bf A simple bulleted list}
+% \begin{itemize}
+% \item{bare\_jrnl.tex}
+% \item{bare\_conf.tex}
+% \item{bare\_jrnl\_compsoc.tex}
+% \item{bare\_conf\_compsoc.tex}
+% \item{bare\_jrnl\_comsoc.tex}
+% \end{itemize}
+
+
+
+
+
+\subsection{Figures}
+
+
+
+ 
+
+\section{Tables}
+
+
+\section{Algorithms}
+
+
+\section{Conclusion}
+The conclusion goes here. \cite{laskaridis2020spinn}
+
+
+
+
+
+
+
+\section*{Acknowledgments}
+This should be a simple paragraph before the References to thank those individuals and institutions who have supported your work on this article.
+
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+\bibliography{re}
+\bibliographystyle{IEEEtran}
+
+% {\appendix[Proof of the Zonklar Equations]
+% Use $\backslash${\tt{appendix}} if you have a single appendix:
+% Do not use $\backslash${\tt{section}} anymore after $\backslash${\tt{appendix}}, only $\backslash${\tt{section*}}.
+% If you have multiple appendixes use $\backslash${\tt{appendices}} then use $\backslash${\tt{section}} to start each appendix.
+% You must declare a $\backslash${\tt{section}} before using any $\backslash${\tt{subsection}} or using $\backslash${\tt{label}} ($\backslash${\tt{appendices}} by itself
+%  starts a section numbered zero.)}
+
+
+
+%{\appendices
+%\section*{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+% You can choose not to have a title for an appendix if you want by leaving the argument blank
+%\section*{Proof of the Second Zonklar Equation}
+%Appendix two text goes here.}
+
+
+
+% \section{References Section}
+
+ 
+ % argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+
+
+
+% \newpage
+
+% \section{Biography Section}
+
+
+
+
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig1}}]{Michael Shell}
+% Use $\backslash${\tt{begin\{IEEEbiography\}}} and then for the 1st argument use $\backslash${\tt{includegraphics}} to declare and link the author photo.
+% Use the author name as the 3rd argument followed by the biography text.
+% \end{IEEEbiography}
+
+
+
+
+% \begin{IEEEbiographynophoto}{John Doe}
+% Use $\backslash${\tt{begin\{IEEEbiographynophoto\}}} and the author name as the argument followed by the biography text.
+% \end{IEEEbiographynophoto}
+
+
+
+
+
+
+
+\vfill
+
+\end{document}
+
+
