@@ -44,8 +44,6 @@
 
 ## 联系方式
 
-提供联系方式，可以包含以下内容：
-
 - 作者：lance kong
 - 邮箱：lance.lz.kong@gmail.com
-- 博客：[your-blog-url](https://your-blog-url.com)
+- 主页：[Home page](https://lancelzkong.wixsite.com/scholarsite)
