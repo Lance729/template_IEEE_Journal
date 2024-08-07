@@ -1,0 +1,756 @@
+% An example for the ar2rc document class.
+% Copyright (C) 2017 Martin Schroen
+% Modifications Copyright (C) 2020 Kaishuo Zhang
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+% \documentclass{ar2rc}
+
+% % textbox
+% \usepackage[most]{tcolorbox}
+% \usepackage{makecell}
+% \usepackage{multirow}
+% \usepackage{graphicx}
+% \usepackage{algorithmic}
+% \usepackage{algorithm}
+% \usepackage{amssymb}
+% \usepackage{amsmath,amsfonts}
+% \usepackage{tabularx}
+% \usepackage{makecell}
+% \usepackage{array}
+
+% \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+% \usepackage{textcomp}
+% \usepackage{stfloats}
+% \usepackage{url}
+% \usepackage{verbatim}
+% \usepackage{graphicx}
+% \usepackage{cite}
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage{subfloat}
+
+% \usepackage{soul, color, xcolor} % 为了给文本加上背景颜色（例如标黄），你可以使用 xcolor 包
+% \soulregister\cite7 %注册\cite命令
+% \soulregister\citep7%注册\citep命令
+% \soulregister\citet7%注册\citet命令
+% \soulregister\ref7 %注册\ref命令
+% \soulregister\eqref7 %注册\ref命令
+% \soulregister\pageref7%注册\pageref命令
+% \soulregister\mathbb7
+% \newcommand{\highlight}[1]{\sethlcolor{yellow!50}\hl{#1}}
+% \usepackage{ulem}
+
+
+
+
+
+\documentclass{ar2rc}
+
+\usepackage[most]{tcolorbox}
+\usepackage{makecell}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{cite}
+\usepackage{booktabs}
+% \usepackage{subfigure}
+\usepackage{subfloat}
+\sethlcolor{yellow!50}
+\usepackage{soul, color, xcolor} % 为了给文本加上背景颜色（例如标黄），你可以使用 xcolor 包
+\soulregister\cite7 %注册\cite命令
+\soulregister\citep7%注册\citep命令
+\soulregister\citet7%注册\citet命令
+\soulregister\ref7 %注册\ref命令
+\soulregister\eqref7 %注册\ref命令
+\soulregister\pageref7%注册\pageref命令
+\soulregister\mathbb7
+
+\newcommand{\highlight}[1]{\sethlcolor{yellow!50}\hl{#1}}
+\usepackage{ulem}
+
+\title{TaCo: Tasks Co-programming for Accelerating Inference in Scaling Edge Computing}
+\author{Lingzheng Kong, Tingting Yang, Nan Li, Kaoru Ota, Mianxiong Dong}
+\journal{IEEE TSC}
+\doi{Paper ID: TSC-2024-05-0350}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+We greatly appreciate the Editor-in-Chief, Editor, Associate Editor, and reviewers for their detailed and valuable comments, which have greatly improved the quality of our paper. 
+
+We are uploading (a) our point-by-point response to the comments (below) (response to reviewers), (b) an updated manuscript with yellow highlighting indicating changes, and (c) a clean updated manuscript without highlights (PDF main document).
+% We have carefully responded to all the comments from the reviewers in a point-to-point. Also, for the convenience of the review, revisions have been highlighted in yellow in the revised manuscript.
+
+% \section{Associate Editor}
+% \textbf{Comments to the Authors:} (There are no comments)
+
+% \textbf{Response to Associate Editor:} Thank you sincerely for all the support you have given to the possible publication of this manuscript.
+
+\section{Reviewer \#2}
+\textbf{Comments to the Authors:} The major concerns are listed below:
+
+\begin{tcolorbox}[
+   title={Reviewer 1: Comment 1},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+There are issues in the following sentences:
+\begin{itemize}
+	\item[1] Pg.3: Col.2: “However, these works focus on offloading the inference workload by rigidly tran or developing lightweight DNN, failing to fundamentally solve the NP-hard scheduling problem”
+
+	\item[2] Pg.6: Col.1: “Before inferring, the original UE will initial the WN graph and DNN graph according to the information of WN and DNN, these two graphs are all unweighted directed graphs with attribute”
+
+	\item[3] Pg.6: Col.1: “XW N =(F) is the attributes set of WN devices and ZW N =(B) is the attributes set of WN deges.”
+	\item[4] Pg.6: Col.1: “X and Z are matrices of node attributes and edge attributes.” As per my understanding, X and Z should be vectors of tuples where each tuple represents the attributes for nodes/edges. If it is represented using matrices, then how does the model capture the categorical attributes of nodes and edges?
+	\item[5] Pg.6:Col.2: Line1:  C is undefined. 
+
+\end{itemize}
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+Thank you for your constructive feedback. We have revised the manuscript to address the issues you raised. We updated the typos in Pg.3: Col.2 and Pg.6: Col.1. Besides that:
+\begin{itemize}
+	\item[1] We updated the sentence in Pg.1: Col.2 by ``\hl{The SC and EE strategies meet the bottleneck owing to the decision-making complexity. They fail to fundamentally develop an efficient solution for accelerating edge inference.}''
+
+	\item[2] Before inferring, the original UE will initial the WN graph and DNN graph according to the information of WN and DNN. We updated the sentence in Pg. 4, Col. 2 by ``\hl{At the start of inference process, the first UE will get the WN graph and DNN graph from the network, these two graphs are all unweighted directed graphs and have attributes.}''
+
+	\item[3-4] $X$ and $Z$ should indeed be tuples, representing attributes, where each column vector represents a feature. For instance, if there are two features (we actually only have one attribute), vevtor $A$ representing an example and $B$ representing energy, then each would be a one-dimensional vector. Thus, $X$ should be defined as $X = (A, B)$. 
+   
+   We updated the sentence in Pg. 4 Col. 2 by \highlight{A graph is defined as $\mathcal{G}$=$\big(\mathbf{V}, \mathcal{E}, \mathbf{X}, \mathbf{Z}\big)$, where $\mathbf{V}$ and $\mathcal{E}$ are sets of nodes and edges in $\mathcal{G}$ respectively, $\mathbf{X}$ and $\mathbf{Z}$ are tuples with vectors represents the attributes of nodes and edges. Each column of $\mathbf{X}$ represents a type of node attribute, every column of $\mathbf{Z}$ represents a type of edge attribute.  As this work jointly considers both computation and communication, not only a node attributes tuple $\mathbf{X}$ is needed for computing, but also the edge attributes tuple $\mathbf{Z}$is necessary to represent the attributes of connection.}
+
+   \highlight{At the start of inference process, the first UE will get the WN graph and DNN graph from the network, these two graphs are all unweighted directed graphs and have attributes.} Formally, as shown in Fig. 3, the WN graph is defined as $\mathcal{G}^{w}$=$\big(\mathbf{V}^{w}, \mathcal{E}^{w}, \mathbf{X}^{w}, \mathbf{Z}^{w}\big)$, where $\mathbf{V}^{w}$=$\big\{$$v_{1}^{w}$, $v_{2}^{w}$, \ldots, $v_{n^w}^{w}$$\big\}$ is the set of devices in the WN, $\mathcal{E}^{w}$=$\big\{e_{1}^{WN}, e_{2}^{WN}, \ldots, e_{|\mathcal{E}|^{w}}^{w}\big\}$ is the set of edges between WN devices, $\mathbf{X}^{w}$=$(\mathbf{F})$ is the attributes tuple of devices, \hl{which contains a 1-dimension vector $\mathbf{F}$. The $\mathbf{Z}^{w}$=$(\mathbf{B})$ is the attributes tuple of WN edges, in which the $\mathbf{B}$ is a 1-dimension vestor of transmission rates for all connections denoted as $\mathbf{B}=\{b_1^{WN}, b_2^{w}, \ldots, b_i\}$, where the $b_i$ is the transmission rate between $i$-th and $i+1$-th devices, with $\mathbf{B}$$\in$$\mathbb{R}^{|\mathcal{E}|^{w} \times 1}$.}
+
+	\item[5] We mistakenly used the complex space $\mathbb{C}^{n,m}$ to define the matrix space for $a \times b$ matrices. Since our resources are expressed using real numbers, we will instead use $\mathbb{R}^{n,m}$ to define the data space of $n$ rows and $m$ columns. We updated the Pg. 2, Col. 2 by: \highlight{The notion $\mathbb{R}^{n,m}$ represents the real number space with $n$ rows and $m$ columns.}
+\end{itemize}
+
+\begin{tcolorbox}[
+   title={Reviewer 1: Comment 2},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+It is not clear to me how the authors simulated the 4G/5G environment. The comparison with the existing works as promised (Pg.3: Contribution-4) is also missing.
+\end{tcolorbox}
+\textbf{Author Response:} 
+
+{We appreciate the reviewer's comments. We added a detailed description of the simulation environment in the manuscript. We have added a detailed description and the references of existing works in revised version.}
+
+Response 1: We have added a detailed description of the simulation environment in Section IV-A Simulation Setup by 
+\highlight{To guarantee the generalizability in scaling ECN, our proposed TaCo is simulated in 4G and 5G two transmission rate environments. The wireless network parameters are adopted from Opensinal [29], a globally authoritative wireless network evaluating company. The transmission rate is $b$, whose parameters are listed in Table III. For further catering to the different communication abilities of UEs as well as ESs, we set two rate levels that uplink $b^{up}$ and downlink $b^{down}$ rates for each network environment. A pair of transmission speeds is defined as $WN$=$(b_{4G}^{up}, b_{5G}^{down})$, where $b_{4G}^{up}$ is upper link speed of 4G, $b_{5G}^{down}$ is the downlink speed of 5G respectively.} 
+
+Response 2: We do comparesion with the existing works as benchmark to our TaCo solusion, but we indeed forget to mention it in the manuscript. We added the references of exiting works in Contribution-4 by:
+\highlight{The results indicate that our TaCo provides optimal or suboptimal solutions for all cases quickly, while maintaining robustness in dynamic network environments. Taco reduces inference latency by up to 6 times compared to other standard solutions [8, 10, 27], even up to 10 times compared to the worst-case scenario.}
+
+
+We updated the Fig. 9 and its discription in Pg. 9 Con. 2. by:
+\highlight{Fig. 9 presents a comparative analysis between TaCo solution and other three standard edge inference accelerating schemes as benchmarks, includeing the UE-only schemes adopted by Facebooke [27] and Li. \textit{et al.} [10], the ES-only scheme adopted by [8].} 
+This study constructs four distinct scenarios with 7, 15, 20, and 32 devices respectively, for each scenario, to simulate a variety of network environments where inference tasks are allocated differently. 
+Our results, incorporating a range of $\eta$ values defined in equation (30), reveal that TaCo not only achieves consistently satisfactory inference outcomes but also significantly outperforms the alternative approaches, notably in more complex network settings with a higher number of devices. \highlight{The exits methods, which offload the entirety of computational tasks to either the initial UE or target UE or the ES connected to the target UE, fall short in comparison.} Instead, our TaCo leveraging the robust computational resources of ES for task subdivision markedly reduces inference latency and overall costs.
+Here, TaCo demonstrates a marked superiority in expediting inference processes over traditional UE or ES reliant strategies, especially when $\eta \geq 3$. Crucially, this advantage escalates with the network's scale, showcasing TaCo's enhanced efficiency in larger systems with numerous devices.
+
+\begin{tcolorbox}[
+   title={Reviewer 1: Comment 3},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+The notations used are unnecessarily complex and difficult to read. For example $\mathcal{G}^{WN}$ could have been represented using $\mathcal{G}^{w}$. Easy notations can improve the readability of this paper.
+\end{tcolorbox}
+\textbf{Author Response:} 
+
+\noindent \textcolor{red}{Thank you for your valuable suggestions to make our manuscript more readable.} The original notations are too complex. We updated $\mathcal{G}^{WN}$, $\mathcal{G}^{DNN}$ and other similarly notations by \highlight{$\mathcal{G}^{w}$, $\mathcal{G}^{d}$, $\mathbf{V}^{w}$, $\mathbf{V}^{d}$,} et al. 
+
+\begin{tcolorbox}[
+   title={Reviewer 1: Comment 4},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+It is not clear to me how the overall problem is different from the existing dependency preserving task scheduling [2-4] problem? Therefore, the need for a new solution approach is also not understandable. The paper proposes task scheduling problem for sub-tasks associated with edge enabled inference algorithms to optimize the overall response time. However, a lot of existing works has been proposed in this direction, and I am not sure how this problem is different than the existing problems. Therefore, it is also not clear to me the solution contributions of this paper.
+\end{tcolorbox}
+\textbf{Author Response:} 
+
+\textcolor{red}{Thank you for your valuable feedback on our manuscript. We appreciate the opportunity to address your concerns regarding the references. }
+
+\textcolor{red}{We acknowledge that the problems addressed in references [2-4] differ significantly from our work. Our research focuses on a Network Resource Arrangement (NRA) problem tailored for edge inference, which jointly considers computing workload and network states. In contrast, references [2-4] investigated federated learning for DNN training. Although both inference and training are NP-hard problems and can be framed as dependency-preserving task scheduling issues, there are certain differences between the inference and training process in their processes and requirements. For example, inference is a sequential process and is typically much faster, while federated training is parallel and more time-consuming. Consequently, the design considerations for our problem are specific to edge inference instead of the training scenarios discussed in those references.}
+
+\textcolor{red}{Additionally, to better reflect the relevance and importance of our study, we have replaced these references with new, more persuasive ones that better highlight our contributions. We believe that edge inference, as a direct AI service to users, is crucial for both users and service providers. Major industry players, like Meta, have emphasized the growing importance of efficient inference, highlighting the speed of inference can be even more critical than training. This drives our proposal for a more efficient solution aimed at advancing edge inference research.}
+
+We updated the inferences in the first paragraph of Section I by \highlight{Meta [3] indicates inference is getting critical, the fasted inference model is more important than the training. In the meanwhile, pervasive smart applications underscore the growing demand for real-time processing and low-latency edge inference, e.g., emergent healthcare monitoring [4], autonomous vehicles [5], and AI Internet of Things (AIoT) [6].} To meet the pervasive requirements from users, the ECN with a distributed network architecture is designed to supply low-latency edge inference services to edge users. 
+\highlight{Edge inference is the forward-propagation process running on UEs and/or ESs in ECN, which differs from the back-propagation process of edge training. Edge inference uses pre-trained AI models to make predictions or decisions. }
+
+We updated a complexity analysis in Section IV-B by \hl{The NRA problem in P1 (7) considers the $n^{w}$ deivices to take on $n^{d}$ DNN segments. The iterative algorithms search every segment for every device, so the loop runs $n^{w}$ times. Each device will be assigned to execute none or more DNN segments, the action space is $(n^{d}+1)$. Exclude the assigned segments, the inner loop for all devices runs $(n^{d}+1)!$ times. Therefore, the complexity of the brute-force algorithm is $O(n^{w} \cdot (n^{d}+1)!)$. As for our proposed GNN-based algorithm, the complexity depends on the scale of graph. Thus, the complexity is $O(n^{w} \cdot n^{d} \cdot K)$, where $K$ is the number of layers of the GNN. The complexity of the GNN-based algorithm is much lower than the brute-force algorithm, which is more efficient in solving the NRA problem.}
+
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 5},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+Missing references:
+
+[1]	L. Meng, Wang, Y., Wang, H. et al. “Task offloading optimization mechanism based on deep neural network in edge-cloud environment”. J Cloud Comp 12, 76 (2023). https://doi.org/10.1186/s13677-023-00450-6
+
+[2]	Y. Cao, H. Chen, J. Jiang and F. Hu, "TaSRD: Task Scheduling Relying on Resource and Dependency in Mobile Edge Computing," 2018 IEEE International Conference on Progress in Informatics and Computing (PIC), Suzhou, China, 2018, pp. 287-295, doi: 10.1109/PIC.2018.8706333.
+
+[3]	X. Cai, Y. Fan, W. Yue, Y. Fu and C. Li, "Dependency-Aware Task Scheduling for Vehicular Networks Enhanced by the Integration of Sensing, Communication and Computing," in IEEE Transactions on Vehicular Technology, doi: 10.1109/TVT.2024.3389951.
+
+[4]	S. Nath, et al. "Containerized deployment of micro-services in fog devices: a reinforcement learning-based approach." The Journal of Supercomputing (2022): 1-29.
+
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+\textcolor{red}{Thank you for your constructive feedback. Following your suggestions, we have added the missing references in the revised manuscript.}
+
+\noindent [L. Meng et. al. 2023] adopted DNN-based optimizer to offload the data to server, which however considered less the dependency of tasks. [Y. Cao et. al. 2018] proposed a TaSRD framework with greedy optimizer to efficiently offload task for mobile edge computing. [X. Cai et. al. 2024] investigated a reinforcement learning (RL)-based approach for vehicular networks, catering to the dynamic movability and task dependency. [S. Nath et. al. 2022] proposed an RL-based pick–test–choose (PTC) framework to dynamically and quickly choose the computation platform for micro-service execution in fog computation network.
+
+We updated the [S. Nath et. al. 2022], [L. Meng et. al. 2023] and [X. Cai et. al. 2024] in Pg.1, Con.2 by \highlight{To further tackle the NP-hard problem in wireless networks, the rapidly evolving learning-based intelligent algorithms [16-18] offers significant benefits to accelerating edge inference.}
+
+We updated the [Y. Cao et. al. 2018] in Pg. 2, Con. 1 by The joint resource scheduling for DNN and ECN is an NP-hard problem as we elaborated, \highlight{thus it is difficult to solve this problem directly with traditional optimization algorithms such as the heuristic algorithms [24] and iterative algorithms [25].}
+
+
+
+\section{Reviewer \#2}
+\textbf{Comments to the Authors:} The major concerns are listed below:
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 1},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+\begin{enumerate}
+   \item The notations are confusing. If $X^{WN}$ is the attributes of WN devices, why we need an additional attributes set $Z^{WN}$? 
+   \item On what basis, the attributes of inference segments and Edge differs?
+ \end{enumerate}
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+
+\textcolor{red}{Thank you for your valuable feedback. We have revised the manuscript to highlight the differences between the attributes of WN devices and WN edges.}
+
+
+\begin{enumerate}
+	\item  In graph theory, a graph is defined as $\mathcal{G}$=$\big(\mathbf{V}, \mathcal{E}, \mathbf{X}, \mathbf{Z}\big)$, the node set and edge set only contain nodes and connections, $\mathbf{X}$ and $\mathbf{Z}$ are tuples with vectors represents the attributes of nodes and edges. Every column in a tuple represents a type of attribute. The attribute $\mathbf{Z}^w$ refers to communicating rate, attribute $\mathbf{Z}^d$ refers to the inner data of DNN. Both the communicating rate and inner data impact the communication latency. \highlight{$\mathbf{X}$ and $\mathbf{Z}$ are tuples with vectors represents the attributes of nodes and edges. Each column of $\mathbf{X}$ represents a type of node attribute, every column of $\mathbf{Z}$ represents a type of edge attribute.  As this work jointly considers both computation and communication, not only a node attributes tuple $\mathbf{X}$ is needed for computing, but also the edge attributes tuple $\mathbf{Z}$is necessary to represent the attributes of connection.}
+	
+   \setcounter{figure}{1} % 将计数器设置为 8，这样下一张图片编号为 9
+   \begin{figure}[thbp] % 任务分割图
+      %\setlength{\abovecaptionskip}{1.7cm}
+      % \setlength{\belowcaptionskip}{1.7cm}
+      \centering
+      % Requires \usepackage{graphicx}
+      \includegraphics[scale = 0.36]{images/DNN_segment_no_figure.eps}
+      \caption{The segment scheme of VGG-16 DNN model.}\label{fig:segment scheme}
+      % \vspace{-0.5cm}
+   \end{figure}
+
+   \renewcommand{\thetable}{II} % 将计数器设置为 8，这样下一张图片编号为 9
+   \begin{table}[h]  % 参数表
+      % \normalsize
+      \centering
+      \caption{The parameters of $\mathbf{U}$ and $\mathbf{D}$} %标题
+      % \scriptsize 
+      % \begin{tabularx}{8.5cm}{c|p{5cm}}
+      \begin{tabular}{m{1.5cm}<{\centering} | m{0.8cm}<{\centering}|m{0.5cm}<{\centering}|m{0.5cm}<{\centering}|m{0.5cm}<{\centering}|m{0.5cm}<{\centering}|m{0.5cm}<{\centering}|m{0.5cm}<{\centering}|m{1.3cm}<{\centering}}  %m{3cm}<{\centering}
+         \toprule
+         Items                       & Input & 1           & 2 & 3 & 4 & 5 & 6 & Output  \\
+         \hline
+         \bfseries  $\mathbf{U}$(GFlops) & - & 5.7 & 5.5 & 7.4 & 5.5 & 4.6 & 2.1 & -   \\
+
+         \hline
+         \bfseries  $\mathbf{D}$(MBits)  & 4.8 & 51.4 & 25.7 & 25.1 & 13.8 & 3.2 & -&  3.2e-2      \\
+
+         \bottomrule
+      \end{tabular}%
+      \label{tab: segment_figures}
+   \end{table} %参数表结束
+
+   \item A DNN model has a sequential structure with some layers and the layer-inner connections, as shown in Fig. \ref{fig:segment scheme}. An inference segment is with no less than one layer and the computing workload of these layers, which will send the data of inner results to the next segment after computing. We updated the Subsection II-A in Pg. 3, Con. 2. \highlight{The inference task is cooperatively implemented by distributed UEs and ESs, and the inference latency jointly contains both computing latency and communication latency. As shown in Fig. 2, we partition the whole inference of a DNN into $6$ approximately equal segments according to its computing workload and sequential structure. The set of inference segments of DNN is defined as $\mathbf{V}^{d}$ = $\big\{$$v_1^{d}$, $v_2^{d}$, \ldots, $v_{n^{d}}^{d}$$\big\}$, where the $v_j^{d}$ is the $j$-th segment of DNN, $n^{d}$ is the number of segments. Each segment holds a number of layers and the computing workload of these layers. The sub-computing workload of the $i$-th segment is defined as $u_j$. The computing workloads for all segments are defined as a 1-dimension vector $\mathbf{U} = \{u_1, u_2, \ldots, u_{n^{d}}\}$. The inner computing results from one segment will be transmitted to the next segment. The volume of the transmitted data is defined as $d_j$, and all the transmitted data is defined as a 1-dimension vector that $\mathbf{D} = \{d_1 , d_2 , \ldots, d_{n^{d}-1}\}$. The parameters of $\mathbf{U}$ and $\mathbf{D}$ are shown in Table \ref{tab: segment_figures} after segmenting the DNN model. This partitioning method helps to segment different DNN models in a same way in the future instead of enacting monogamous schemes.}
+
+\end{enumerate}
+
+
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 2},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+System model writing is tough to understand.
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+
+\noindent Thank you for your feedback. We have revised the system model writing to make it more understandable. We have added more detailed descriptions of the system model in Section II System Model. The revised text is as follows:
+
+\highlight{In our study, we consider a dynamically scaling ECN composed of $n$ ESs, as illustrated in Fig. 1. According to Google [26], edge inference starts when the input data is prepared on the first device and ends when the results are outpu.  The preprocessing of raw data is not included in the inference latency. Therefore, in this paper, edge inference latency is defined as the interval from when the first UE prepares the data to when the target UE receives the inference results. The set of UEs and ESs in the network is denoted as $\mathbf{V}^{w} = \{v^{w}_1, v^{w}_2, \ldots, v^{w}_{n^w}\}$, where $v^{w}_i$ represents the $i$-th intelligent device, with $v_{1}^{w}$ being the first UE and $v^{w}_{n^w}$ being the target UE. The total number of devices in the network is $n^w$. Each intelligent device has computing capabilities measured in floating-point operations per second (FLOPS). The computing ability of an $i$-th device is denoted by $f^{w}_i$, the computing ability of all devices is denoted as a 1-dimensional vector that $\mathbf{F}$ = $\{f^{w}_1, f^{w}_2, \ldots, f^{w}_{n^w}\}$, with $\mathbf{F}$$\in$$\mathbb{R}^{n^w \times 1}$.}
+
+\highlight{An ES, within the context of ECN, is a device that enables UE to connect to the wired network. ESs typically have servers capable of implementing edge inference. Each ES manages a variable number of UEs within its coverage area. In this network, a UE refers to any device used directly by an end-user for communication, such as a mobile phone, smart device, or any other gadget that connects to a wireless network. UEs establish connections through the ES and can communicate directly with their nearest ES but not with more distant ones. For example, if a UE needs to communicate with a remote ES, it must use a nearby ES as a relay. Similarly, a UE can only connect to its local ES and cannot directly interact with other UEs or distant ESs. In real-world scenarios, an ES typically can connect with all accessible devices and determine an optimal route for communication. However, in this study, we assume that the connections between two devices are predetermined and the global information regarding the route is already known. Therefore, route determination is not a primary focus of this paper. Our model includes a progressive edge inference process. When a new inference task is received, the originating UE initiates the process, which continues until the target UE receives the final result.}
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 3},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+Given a workload, how the workload is split as $u_i$?
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+
+During the edge inference, the workload has two aspects that computing workload and communicating workload. Given a DNN model and input data, the whole workload will not change. \highlight{Each segment holds a number of layers and the computing workload of these layers. The sub-computing workload of the $i$-th segment is defined as $u_j$. The computing workloads for all segments are defined as a 1-dimension vector $\mathbf{U} = \{u_1, u_2, \ldots, u_{n^{d}}\}$.} This splitting method helps to segment different DNN models in a same way in the future instead of enacting monogamous schemes.% In another word, we split the DNN inference by layers instead of directly splitting the workload. 
+
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 4},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+\begin{enumerate}
+	\item I think the NW graph is the topology, and the DNN graph is a Deep neural network. (Fig 3) If so, the work tries to match the workload and inference segments. What is the need for non-Euclidian space alignment? It is not clear why we need to model inference as Graph itself. 
+	\item Let us take a simple example: We will have a DNN with 10 layers and an ECN with 5 devices, so why should we model DNN inference as segments in the first place since DNN inference mainly depends on the DNN model?
+
+\end{enumerate}
+\end{tcolorbox}
+
+\textbf{Author Response:} 
+
+\textcolor{red}{Thank you for your insightful comments. In the received manuscript, we updated the explanation for your concerns.}
+
+
+
+\begin{enumerate}
+	\item Aligning the spaces gives a favor to the proposed TaCo for jointly considering the DNN and dynamic ECN. In traditional solutions [9, 10], the greedy algorithm or other heuristic algorithms are used to match and allocate the workload and network topology. These kinds of algorithms search more possible scheduling schemes for every device as well as inference segments, which will cause extra high latency cost in the searching process. According to our investigation, the reason is the ECN and inference stay in different non-Euclidian spaces, especially the ECN is scaling. In your example, the DNN has attributes that layers, workload of layers, inner results among layers; The ECN is more complicated owing to evolving dynamically, it has devices, resources for computing and communicating, bandwidth. It is hard to directly match the workload and ECN in the meantime. Therefore, the best way is to catch the complete information of both DNN and ECN by once observation. By modeling the DNN and ECN as the graphs, we merge the independent information together and jointly make scheduling scheme by once observation.
+	
+   \setcounter{figure}{9} % 将计数器设置为 8，这样下一张图片编号为 9
+	\begin{figure}[t]
+      \centering
+      \subfloat[7 nodes scenario.]{
+         \begin{minipage}{0.44\linewidth}
+            \centering
+            \includegraphics[scale=0.25]{images/node7_0rand_EStimesUE_cifar100.eps}
+         \end{minipage}
+      }
+      \hfill % 用于当前行的两个图像之间
+      \subfloat[15 nodes scenario.]{
+         \begin{minipage}{0.44\linewidth}
+            \centering
+            \includegraphics[scale=0.25]{images/node15_0rand_EStimesUE_cifar100.eps}
+         \end{minipage}
+      }
+      \\ % 换行，开始新的一行
+      \subfloat[20 nodes scenario.]{
+         \begin{minipage}{0.44\linewidth}
+            \centering
+            \includegraphics[scale=0.25]{images/node20_0rand_EStimesUE_cifar100.eps}
+         \end{minipage}
+      }
+      \hfill % 用于当前行的两个图像之间
+      \subfloat[32 nodes scenario.]{
+         \begin{minipage}{0.44\linewidth}
+            \centering
+            \includegraphics[scale=0.25]{images/node32_0rand_EStimesUE_cifar100.eps}
+         \end{minipage}
+      }
+      %TODO 检查一下这个名是否需要改一下
+      \caption{Compare the latency-optimizing performance of ToCo and the other three schemes (inference on UE, on the first ES and on the last ES) with variable $\eta$ in different scenarios. The dataset is Cifar100, DNN model is VGG-16.}\label{fig:APtimesUE_TaCo_cifar100_vgg16}
+   \end{figure}
+
+	\item The edge inference crosses user ends and edge servers, which is cooperatively implemented by many devices. To achieve a lower latency by assigning the workload to devices, the DNN inference should be segmented before scheduling, then the segments with workload can be assigned by our proposed TaCo framework. As an assumption, if the DNN model does not get segmented, the inference will be implemented as a whole by only one device. According to the experiment results, the performance of one-device scheme is shown in Fig. 10 as follows, which is much worse than the cooperative schemes. This is why the DNN inference should be segmented by the first devices before scheduling.
+
+\end{enumerate}
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 5},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+In standard GCN, graph propagation rule is based on first-order approximation of localized spectral filters. What are the basis of graph propagation rules Eq.15 and 16?
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\textcolor{red}{Truly appreciate your valuable comments. We have revised the manuscript to highlight the advancement of GNN we used compared to the standard GCN, as well as its graph propagation.}
+
+\textcolor{red}{Graph Convolutional Network (GCN) is a deep learning architecture to extract structure features from graph. The standard GCN proposed by ( Kipf and Welling 2017 ) [32]. (K. Xu 2019) however indicated a powerful GNN should have the ability not only to distinguish the structural information of graph, but also to further map the structure-different graph to different feature vector.} They proposed Graph Isomorphism Network (GIN) for catching the global features of graph with structural information. W. Hu et. al. [28] used mathematical theory and experiments to proof their GIN gets better performance in catching structural features compared to Kipf's standard GCN. 
+
+Our work investigates the edge inference on edge computing network. Wireless network and DNN stay in different non-Euclidian spaces, both of them possess different non-isomorphism structures. Especially the DNN inference is sequentially implemented, the computing process has dependency. The structural information is crucial for resource scheduling. 
+\highlight{Two $GINEConv()$ respectively implement the WN graph $\mathcal{G}^{w}$ and DNN graph $\mathcal{G}^{d}$ as following}:
+		\begin{align}
+		%TODO: 前两层应该都是用GINEConv
+			& h_{1} = GINEConv \Big(\mathcal{G}^{w}\Big), \tag{15} \label{h_gWN}
+			\\& h_{2} = GINEConv \Big(\mathcal{G}^{d}\Big),\tag{16} \label{h_gDNN}
+		\end{align}
+\highlight{where $h_{1}$ and $h_{2}$ are graph-level representation for $\mathcal{G}^{w}$ and $\mathcal{G}^{d}$ respectively.}
+
+
+
+The equations Eq.31 and 32 of GINE implement non-unified data. They map the different attributes to unified vectors by an Embedding() layer. The GNN can implement dimension-unified data after embedding These two equations meet the challenge of the dynamically scaling wireless network. The $GINEConv()$ function is proposed by Hu \emph{et al.} [28], \highlight{whose authors use mathematical theory and experiments to proof their GIN gets better performance in catching structural features compared to Kipf's standard GCN [32]. This $GINEConv()$ can distinguish the structural information and further map the structure-different graph to different feature vector.} By utilizing $GINEConv()$ to capture the full high-level knowledge from the WN and DNN graphs, the GNN can optimize the proposed GNC problem P2 based on $\mathcal{G}^{w}$ and $\mathcal{G}^{d}$, which $GINEConv()$ is formulated as:
+\begin{align}
+   & h_{v}^{(0)}=\sum^{\left | X \right | }_{i=1} \text{EmbNode}_{i} \left( x_{v,i} \right),\quad x_{v,i}\in\mathbf{X} \tag{31} \label{GINE 1} 
+   \\&h_{e}^{(k)}=\sum^{\left | Z \right | }_{j=1} \text{EmbEdge}^{(k)}_{j} \left( z_{e,j} \right), \quad z_{e,j}\in\mathbf{Z} \tag{32}\label{GINE 2}
+   \\&h_v^{(k)}= \text{ReLu}\Bigg[\text{MLP}^{(k)}\Bigg( \sum^{}_{u \in \mathcal{N}(v)\cup \{v\}}h_{u}^{(k-1)}\nonumber 
+   \\&\quad\quad\quad\quad\quad\quad\quad\quad+\sum^{}_{e=(v,u)\colon u \in \mathcal{N}(v)\cup \{v\}}h_{e}^{(k-1)} \Bigg)\Bigg], \tag{33}\label{GINE 3}
+   \\&h_{\mathcal{G}}=\text{MEAN}\Big({h_v^{(K)}|v\in \mathcal{G}}\Big),\tag{34} \label{GINE 4}
+\end{align}
+where $K$ is the numbers of layers of $GINEConv()$, $k$$\leq$$K$ is the $k$-th layer. $x_{v,i}$ and $z_{e,j}$ in equantions \eqref{GINE 1} and \eqref{GINE 2} are the $i$-th node attribute of $v$ and $j$-th edge attribute of $e$, $\left | X \right | $ and $\left | Z \right | $ are dimensions of $\mathbf{X}$ and $\mathbf{Z}$ respectively. \highlight{The equations \eqref{GINE 1} and \eqref{GINE 2} of GINE implement non-unified data. They map the different attributes to unified vectors by an $Embedding()$ layer. The GNN can implement dimension-unified data after \eqref{GINE 1} and \eqref{GINE 2}. These two equations meet the challenge of dynamically scaling wireless network.}
+\eqref{GINE 3} is node-edge-representation-update function. In \eqref{GINE 4}, $h_{\mathcal{G}}$ is graph $\mathcal{G}$'s graph-level representation obtained by averaging the node embeddings as $READOUT()$ function at the final layer $K$. 
+
+K. Xu, et al. "How powerful are graph neural networks?." ICLR 2019.
+
+
+
+
+
+
+
+
+
+\begin{tcolorbox}[
+   title={Reviewer 2: Comment 6},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+Can we have at least emulation instead of simulation?
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\noindent We adopt wildly used devices and globally standard data to test the improvement of our work, aiming to guarantee practicality. In the meanwhile, we adopt the popular DNN as inference task, which further helps our solution to deploy in a real emulation platform in the future. Limited to experiment resources, we now however fail to execute emulation. We plan to buy more professional computing and communicating devices to emulate our work, by which further advanced solutions will be developed in the future.
+
+
+\section{Reviewer \#3}
+
+\textbf{Comments to the Authors:}
+
+\noindent This paper proposes a learning-based mechanism, tasks co-programme (TaCo), to cooperatively accelerate the edge inference to achieve latency-efficient services. The high-complexity network resource arrangement (NRA) problem is transformed as a tractable graph node classification (GNC) problem using a graph optimization theory. Then, a graph neural network (GNN) is used to jointly aggregate the network condition and inference workload. In addition, a learning-based actor critic (A2C) mechanism is used to improve the performance of the GNN. The results show that the proposed model improves the performance of edge computing network (ECN). The major concerns are listed below:
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 1},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+The introduction does not discuss the contribution of the paper. Section II can be included inside Section I, such that the motivation can be drawn from the related works and then, the contributions can be highlighted.
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\textcolor{red}{Thank you for your valuable feedback. We have revised the manuscript by merging the Section II Related work into the Section I. The contributions of our work are highlighted.}
+
+We updated the Section I Introduction to include the related work and contributions. 
+
+The first two contributions are highlighted in Pg. 2 Con. 2.
+\begin{itemize}
+	\item[$\bullet$] \highlight{According to the real-time but resource-limited demands of edge inference, we model an edge computing network that jointly considers computing and communication resources, where UEs and ESs cooperatively execute the edge inference task. A groundbreaking framework namely Task Co-programme (TaCo) is designed to address the challenge of low-latency in edge inference by optimizing resource utilization in dynamic ECN, for enabling more efficient real-time smart applications.}
+
+	\item[$\bullet$] \highlight{Our proposed TaCo designs a novel graph neural network (GNN) architecture to cohesively align the two non-Euclidean spaces of DNN and ECN into a unified data space. This alignment strategy simplifies the complicated NP-hard NRA problem into a tractable GNC problem, that can be directly solved with a single GNN inference.}
+   \item[$\bullet$] To elevate the performance of TaCo in a long term, we incorporate a sophisticated RL mechanism to refine the GNN, resulting in enhanced scheduling. By merging the DNN and the ECN spaces, TaCo facilitates seamless, real-time edge inference. This approach significantly improves the framework's efficiency and optimizes long-term performance, ensuring that TaCo remains adaptive and effective over time.
+	\item[$\bullet$] \highlight{The results indicate that our TaCo provides optimal or suboptimal solutions for all cases quickly, while maintaining robustness in dynamic network environments. Taco reduces inference latency by up to 6 times compared to other standard solutions [8, 10, 26], even up to 10 times compared to the worst-case scenario.}
+\end{itemize}
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 2},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+The paper uses many machine learning models, such that GNN, DNN, and RL, are used. However, the motivation of using these models are not highlighted. Moreover, the uses of these models are not clearly described.
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\textcolor{red}{Thank you for your valuable suggestions. We have revised the manuscript to highlight the motivation for using the these models. We have also updated the descriptions of these models throughout the paper.}
+
+
+
+This paper investigates to accelerate the inference of deep neural network (DNN) in edge computing network (ECN). For this, we propose a learning-based solution namely TaCo. TaCo is equipped a graph neural network (GNN) as a scheduler to the learned feature from both DNN and ECN and further to make scheme. The learned feature supports the GNN of TaCo to make scheme. Finally, for enhancing the scheme-making ability of the TaCo, reinforcing learning (RL) is adopted to elevate the performance of GNN by reacting with the dynamic environments of ECN in a long term.
+
+We updated the motivation for accelerating the edge inference in Pg.1 Con.1 by \highlight{Meta [3] indicates inference is getting critical, the fasted inference model is more important than the training. In the meanwhile, pervasive smart applications underscore the growing demand for real-time processing and low-latency edge inference, e.g., emergent healthcare monitoring [4], autonomous vehicles [5], and AI Internet of Things (AIoT) [6]. To address this challenge, the ECN, a distributed network architecture, is designed to supply low-latency edge inference services to edge users.}
+
+We updated the motivation of using GNN in Pg. 2 Con. 2 by \highlight{To further tackle the NP-hard problem in wireless networks, the rapidly evolving learning-based intelligent algorithms [16-18] offers significant benefits to accelerating edge inference. Traditional resource allocation strategies in these complex and dynamic environments failing to meet real-time requirements efficiently, especially in scaling-dynamic ECN. GNN as an advanced learning-based method recently leveraged to intellectualize the network resource scheduling-making [19-23].}
+
+We updated the description of these model throughout the paper and updated a brief in Pg. 2 Con. 1 by \highlight{Aiming at overcoming the challenge of low-latency edge inference, we unveil a pioneering framework namely tasks co-programme (TaCo) improving resource utilization for real-time smart applications. Our approach introduces a novel GNN-based architecture to align the DNN and ECN spaces in different non-Euclidean spaces into a unified data space. TaCo then learns the global features from this integrated space further to make scheme. This alignment action simplifies the NP-hard scheduling challenge into a tractable GNC problem. Additionally, we employ the RL as a training mechanism to enhance the GNN scheduler, boosting the performance of TaCo by reacting with the dynamic ECN in a long term.}
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 3},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+Due to the use of many machine learning models, the proposed mechanism is complex. A thorough statistical analysis is required for time and space complexity of the model.
+\end{tcolorbox}
+
+\textbf{Author Response:}
+We updated a time complexity analysis in Section IV-B by 
+\hl{The NRA problem in P1 (7) considers the $n^{w}$ deivices to take on $n^{d}$ DNN segments. The iterative algorithms search every segment for every device, so the loop runs $n^{w}$ times. Each device will be assigned to execute none or more DNN segments, the action space is $(n^{d}+1)$. Exclude the assigned segments, the inner loop for all devices runs $(n^{d}+1)!$ times. Therefore, the complexity of the brute-force algorithm is $O(n^{w} \cdot (n^{d}+1)!)$. As for our proposed GNN-based algorithm, the complexity depends on the scale of graph. Thus, the complexity is $O(n^{w} \cdot n^{d} \cdot K)$, where $K$ is the number of layers of the GNN. The complexity of the GNN-based algorithm is much lower than the brute-force algorithm, which is more efficient in solving the NRA problem.}
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 4},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+
+What is the guarantee that the GNN would be able to optimize the GNC problem P2? How is the number of layers of the GNN selected? What is the impact of the number of layers on the proposed optimization?
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\textcolor{red}{Thank you for your valuable comments about some missed but important details and configurations in the manuscript. We have updated the manuscript to include the following information.}
+
+\begin{enumerate}
+  
+   \item Some previous works adopted the GNN as scheduler to make schemes for network. For instance, [19] indicates the GNN is suitable for multi-type wireless network problems and [20] proves the GNN-based algorithm getting better performance than traditional solutions on network resource allocation problem. \highlight{These works indicated the wireless network problems can be graphed and further solved by GNN.} However, our resource allocation problem P1 jointly considers computing workload and communicating, which is more complicated and harder to be directly solved by existed solutions. Thus, the resource allocation problem P1 is converted to a graphed version namely GNC problem P2 and is further solved by proposed TaCo. \textcolor{red}{Additionally, the problem-solving ability is also approved by our experiment results shown in Fig. 8 and Fig. 9.}
+
+   \item We updated the parameter set of $GINEConv()$ in Section VI-A. \highlight{The parameter set of GNN is as same as the original $GINEConv()$, the configurations are 5 GNN layers for each $GINEConv()$, $K=5$. All MLPs are 5 layers, $K_3=5$. DNN model to implement the edge inference in this paper is introduced in Appendix A.}
+
+   \item The references (Xu et al. 2019) had executed wildly experiments compared to other standard GNNs, whose $GINEConv()$ got exceeding results. These results support the original configurations are powerful enough to take on our problem. On the other hand, we execute experiments with less or more GNN layers and get measly impact on our optimization problem. Considering this paper investigates whether the alignment option can favor to the complicated resource allocation problem instead of GNN architecture itself, we make no change to the original $GINEConv()$. Using the standard $GINEConv()$ guarantees the practicability of our work. We will develop more expert GNN for wireless network in the future. 
+\end{enumerate}
+K. Xu, et al. "How powerful are graph neural networks?." ICLR 2019.
+
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 5},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+The update of the GNN is required. How are the update performed and the timestamps between two updates determined?
+\end{tcolorbox}
+
+\textbf{Author Response:} Thank you for your advice. We updated the training process of the GNN with A2C in Section V-B, and added a pseudocode Algorithm 1 to describe it. 
+
+\begin{algorithm}
+   \caption{Training and Updating Process for GNN with A2C}
+   \begin{algorithmic}[1]\label{RL-GNN Training Process}
+   \STATE Initialize GNN weights $\boldsymbol{\theta}$, environment and observation
+   \STATE Define GNN models for actor $\boldsymbol{\pi}$ and target $\boldsymbol{q}^{-}$
+   \STATE Do training for $N$ episodes:
+   \FOR{each episode}
+      \STATE Perform action and get new observation, latency, reward: $s_{t+1}, L_{t}, r_{t} \leftarrow environment(A_{t})$
+      \STATE Obtain new actor $\mathbf{A}_t \sim \boldsymbol{\pi}(\cdot|\boldsymbol{s}_t; \boldsymbol{\theta}_t)$
+      % \STATE Perform new action based on the new actor predictions
+   
+ 
+      \STATE Get target value $q^-_t$$\sim $$\boldsymbol{q}^{-}\left(\boldsymbol{s}_t, \mathbf{A}_t;\boldsymbol{\omega_t}\right)$
+      \STATE Calculate TD target $y^-_t $ and TD error $\delta_t$
+      \STATE Calculate total loss $\mathcal{L}(\boldsymbol{\theta}_t) = \alpha \mathcal{L}_{critic}(\boldsymbol{\theta}_t) + \mathcal{L}_{actor}(\boldsymbol{\theta}_t)$
+      \STATE Compute gradient of loss $\nabla_{\boldsymbol{\theta}_t} \mathcal{L}(\boldsymbol{\theta}_t)$
+      \STATE Define $RMSProp()$ as optimizer with the selected learning rate
+		\STATE Set learning rate $\beta, \tau \sim \mathit{LogUniform}(10^{-4}, 10^{-2})$
+      \STATE Update $\boldsymbol{\theta}_{t+1} \leftarrow \boldsymbol{\theta}_t + \beta \nabla_{\boldsymbol{\theta}_t} \mathcal{L}(\boldsymbol{\theta}_t)$
+      \STATE Update $\boldsymbol{\omega}_{t+1} \leftarrow \tau \boldsymbol{\theta}_t + (1 - \tau) \boldsymbol{\omega}_t$
+      \STATE Update reward $r_t$
+ 
+   \ENDFOR
+   
+   \STATE Return training results
+   
+   \end{algorithmic}
+   \end{algorithm}
+
+
+
+
+   \highlight{The training process of GNN is shown in Algorithm \ref{RL-GNN Training Process}}. As the policy network and critic network share an intermediate network, the integrated loss function is denoted by $\mathcal{L}(\boldsymbol{\theta})$ and formulated as:
+\begin{align} \label{total loss}
+    & \mathcal{L}(\boldsymbol{\theta}_t)=\alpha\mathcal{L}_{critic}(\boldsymbol{\theta}_t)+\mathcal{L}_{actor}(\boldsymbol{\theta}_t), \tag{21}
+\end{align}
+where $\alpha$$\in$$[0,1]$ is weight tuned to balance the subloss $\mathcal{L}_{actor}$ for actor network and subloss $\mathcal{L}_{critic}$ for critic network. 
+
+For subloss $\mathcal{L}_{actor}$, A2C utilizes an advantage function to improve the performance of learning whereas not interfere with the results. Generally, the advantage function calculates temporal difference (TD) error to indicate the learning performance, the TD error is denoted by $\delta$ and formulated as follows:
+\begin{align}
+    & \delta_t=q_t-y_t \tag{22} \label{TD1}
+   \\& y_t=r_t+\gamma q_{t+1}, \tag{23} \label{TD2}
+\end{align}
+where $y_t$ is the TD target, in which $q_{t+1}$ is the estimation for $\mathbf{A}_t$ and the next episode station $s_{t+1}$, and $\gamma$$\in$$[0,1]$ is discount rate.
+Function (\ref{TD1}) represents that:
+\begin{itemize}
+
+   \item[$\bullet$] if $\delta_t$$<$$0$, which means the action $\mathbf{A}_t$ or the next episode station $\boldsymbol{s}_{t+1}$ has satisfactory performance;
+
+   \item[$\bullet$] if $\delta_t$$>$$0$, which means the action $\mathbf{A}_t$ or $\boldsymbol{s}_{t+1}$ is bad.
+
+\end{itemize}
+The $\delta$ helps to improve RL training and elevate the performance of policy network $\boldsymbol{\pi}$. Note that the target network is utilized to alleviate the error caused by bootstrapping of TD [29], denoted $\boldsymbol{q}^{-}\left(\boldsymbol{s};\boldsymbol{\omega}\right)$ the target network with the same architecture as critic network while updating by different parameters, where $\boldsymbol{\omega }$ is the network parameter matrix of $\boldsymbol{q}^{-}$, thus $q^-_t$$\sim $$\boldsymbol{q}^{-}\left(\boldsymbol{s}_t, \mathbf{A}_t;\boldsymbol{\omega_t}\right)$ represents the target value outputs from target network $\boldsymbol{q}^{-}\left(\boldsymbol{s}_t, \mathbf{A}_t;\boldsymbol{\omega_t}\right)$ according to $\mathbf{A}_t$ at episode $t$. Replacing $q_{t+1}$ with $q^-_{t+1}$, the equation (\ref{TD2}) is reformulated as:
+\begin{equation}
+   y^-_t=r_t+\gamma q^-_{t+1}. \tag{24} \label{TD3}
+\end{equation}
+Therefore, the squared $\delta$ is utilized as the subloss for critic network $\boldsymbol{q}\left(s;\boldsymbol{\theta}\right)$, denoted $\mathcal{L}_{critic}$ the loss of critic network as:
+\begin{equation}
+   \mathcal{L}_{critic}(\boldsymbol{\theta}_t) = \frac{1}{2}\Big[q_t-y^-_t\Big]^2, \tag{25}
+\end{equation}
+The policy network (actor) learns to generate more satisfactory action for earning higher criticism value and reward, according to policy gradient theorem, denoted $\mathcal{L}_{actor}$ the subloss for policy network $\boldsymbol{\pi}\left(s;\boldsymbol{\theta}\right)$ as:
+\begin{equation}
+   \mathcal{L}_{actor}(\boldsymbol{\theta}_t) =  \sum^{}_{a_{i,t}\in\mathbf{A}_t}\ln\boldsymbol{\pi}\left(a_i|\boldsymbol{s}_t,\boldsymbol{\theta}_t \right)\delta_t, \tag{26}
+\end{equation}
+where $a_{i,t}$ is $i$-th subaction of action $\mathbf{A}_t$ at $t$, $\ln\boldsymbol{\pi}\left(a_{i,t}|\boldsymbol{s}_t,\boldsymbol{\theta}_t \right)$=$P(a_{i,t}|\boldsymbol{\pi}\left(\boldsymbol{s}_t,\boldsymbol{\theta}_t \right))$ is the probability of a subaction $a_{i,t}$ generated by policy network $\boldsymbol{\pi}$ with station $\boldsymbol{s}_t$ and parameters $\boldsymbol{\theta}_t$ at $t$. 
+
+To update the weight parameters of $\boldsymbol{\theta}$ and $\boldsymbol{\omega}$, according to (\ref{total loss}), the gradient of loss is formulated as:    %这里不需要分段
+\begin{align} \label{gradient of loss}
+    & \nabla_{\boldsymbol{\theta}_t}\mathcal{L}(\boldsymbol{\theta}_t)=\underbrace{\alpha \delta_t\nabla_{\boldsymbol{\theta}_t}\ln\boldsymbol{\pi}\left(a_{i,t}|\boldsymbol{s}_t,\boldsymbol{\theta}_t \right)}_{\nabla_{\boldsymbol{\theta}_t}\mathcal{L}_{actor}(\boldsymbol{\theta}_t)}+\underbrace{\delta_t\nabla_{\boldsymbol{\theta}_t}\boldsymbol{q}\left(\boldsymbol{s}, \mathbf{A};\boldsymbol{\theta}\right)}_{\nabla_{\boldsymbol{\theta}_t}\mathcal{L}_{critic}(\boldsymbol{\theta}_t)} , \tag{27}
+\end{align}
+where $\nabla_{\boldsymbol{\theta}_t}\mathcal{L}(\boldsymbol{\theta}_t)$ is the gradient to loss $\mathcal{L}$ about parameters $\boldsymbol{\theta}_t$ of network, $\nabla_{\boldsymbol{\theta}_t}\mathcal{L}_{actor}(\boldsymbol{\theta}_t)$ and $\nabla_{\boldsymbol{\theta}_t}\mathcal{L}_{critic}(\boldsymbol{\theta}_t)$ are gradient for $\mathcal{L}_{actor}$ and $\mathcal{L}_{critic}$ respectively. Thus, the update function for integrated network with $\boldsymbol{\theta}$ is:
+\begin{align} \label{update function of actor}
+   \boldsymbol{\theta}_{t+1}\leftarrow \boldsymbol{\theta}_t+\beta \nabla_{\boldsymbol{\theta}_t}\mathcal{L}(\boldsymbol{\theta}_t), \tag{28}
+\end{align}
+where $\beta$$\in$$[0,1]$ is learning rate. Additionally, as the target network $\boldsymbol{q}^{-}\left(\boldsymbol{s};\boldsymbol{\omega}\right)$ has the same architecture as the critic network but with different parameters, which independently updates its parameters by meaning weighted $\boldsymbol{\omega}$ and $\boldsymbol{\theta}$, thus the update function for target network is:
+\begin{align} \label{update function of critic}
+   \boldsymbol{\omega}_{t+1}\leftarrow \tau \boldsymbol{\theta}_t+(1-\tau)\boldsymbol{\omega}_t, \tag{29}
+\end{align}
+where $\tau$$\in$$[0,1]$ is learning rate. \highlight{The RMSProp is adopted as the optimizer, and the learning rates sampled from $\mathit{LogUniform}(10^{-4}, 10^{-2})$ [28].}
+
+
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 6},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+                 Need more explanation on the state, action and reward of the RL designed in this paper.
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+\noindent Thank you very much for your careful and thorough reading of this manuscript and for the thoughtful and constructive suggestions. The revised version should include more details about the state, action and reward of the RL. 
+
+
+\textbf{Author Action:}
+\noindent We updated the Pg. 7 Con. 1 of Section V-A by:
+
+\hl{The A2C training architecture in this paper is a synchronous variant with a Shared Parameters mechanism, achieving more stable convergence compared to the standard Asynchronous Advantage Actor-Critic (A3C) [28]. The GNN and MLPs within the proposed TaCo framework serve as the policy network $\boldsymbol{\pi}$ of A2C to determine the action $\mathbf{A}$ based on environmental states $\boldsymbol{s}$, and as a policy network $\boldsymbol{q}$ to evaluate the performance. The objective of the RL is to maximize the cumulative reward over time. The reward $r$ is a scalar feedback signal that the agent receives from the environment after performing an action. }
+
+\hl{In this architecture, the policy network is denoted as $\boldsymbol{\pi}(\cdot|\boldsymbol{s}, \boldsymbol{\theta})$. The action $\mathbf{A}_t \sim \boldsymbol{\pi}(\cdot|\boldsymbol{s}_t; \boldsymbol{\theta}_t)$ represents the scheme designed by the agent based on the current state $\boldsymbol{s}_t$ following the policy $\boldsymbol{\pi}$, where $\boldsymbol{\theta}_t$ denotes the trainable parameters of TaCo at episode\footnote{In the context of RL, an ``episode'' refers to a single run of the RL device interacting with its environment. During an episode, the device takes action, receives rewards, and updates its policy equation based on the feedback received from the environment.} $t$. This action is enacted by the original UE and is aimed at achieving the desired inference latency within the environment. The state $\boldsymbol{s}_t$ comprises $\mathcal{G}^{w}_t$ and $\mathcal{G}^{d}_t$, which are specific components of the environmental information that the agent observes at a particular episode $t$. 
+The critic network is represented as $\boldsymbol{q}(\boldsymbol{s}, \mathbf{A}; \boldsymbol{\theta})$, outputing a criticism value $q_t$ according to $\boldsymbol{s}_t$ and action $\mathbf{A}_t$ at episode $t$. 
+As shown in Fig. 7, interaction of these components in a single episode of A2C is: 1) The agent observes the current state $\boldsymbol{s}_t$ of the environment, 2) Based on this state, it generates an action $\mathbf{A}$ with a policy $\boldsymbol{\pi}$ and a criticism value $q_t$ with a critic $\boldsymbol{q}$, 3) The action affects the environment, transitioning it to a new state $\boldsymbol{s}_{t+1}$, 4) The environment provides a reward $r$ to the agent as feedback to update the weight parameters. We adopt an event-driven method to determine the update timestamps. As long as an episode is completed, the next episode will start to run.}
+% \cite{} %! 这个引用是为了占位置，最后要删掉
+
+\begin{tcolorbox}[
+   title={Reviewer 3: Comment 7},
+   colback=gray!10,%gray background
+   colframe=black,% black frame colour
+   width=\linewidth,% Use 8cm total width,
+   arc=1mm, auto outer arc,
+   boxrule=0.5pt,
+]
+The result section needs more analysis such as convergence of the performances of the machine learning models, energy consumption, the analysis of the optimization with respect to different optimization states, etc.
+\end{tcolorbox}
+
+\textbf{Author Response:}
+
+
+\noindent Thank you for your valuable feedback. We appreciate your suggestion for enhancing the result section with additional analyses. As for energy efficiency, this paper focuses on edge inference accelerating instead of energy saving. The research on energy will be investigated in our future work. We added a loss converge figure and updated the convergence analysis of the GNN in Section IV-B Simulation Results by:
+
+\setcounter{figure}{8} % 将计数器设置为 8，这样下一张图片编号为 9
+\begin{figure*}[ht]
+   % \centering
+   \subfloat[]{
+      \begin{minipage}{0.33\linewidth} % 要保证这个数字加起来不超过1
+         \centering
+         \includegraphics[scale=0.42]{images/latency_steady.eps}\label{fig:latency_steady}
+      \end{minipage}
+   }
+   \hfill % 用于当前行的两个图像之间
+   \subfloat[]{
+      \begin{minipage}{0.33\linewidth}
+         \centering
+         \includegraphics[scale=0.26]{images/方差图4_in_1_cifar100_new.eps}\label{fig:average latency with gap}
+      \end{minipage}
+   }
+   % \hfill % 用于当前行的两个图像之间
+   \subfloat[]{
+      \begin{minipage}{0.33\linewidth}
+         \centering
+         \includegraphics[scale=0.4]{images/actor_loss_plot.eps}\label{fig: actor_loss_plot}
+      \end{minipage}
+   }
+
+
+   %TODO 检查一下这个名是否需要改一下
+   \caption{a) The performances of latency optimizing for dynamically scaling ECN. b) The average and distribution interval of latency among 1000 times retrain four typical conditions. \hl{c) The average loss curves among 10 thousand times in dynamic scaling ENC environments.}}\label{fig: latency and loss convergence}
+\end{figure*}
+
+Fig. \ref{fig: latency and loss convergence} illustrates the performances and stability of latency optimizing for dynamically scaling ECN. Fig. \ref{fig:latency_steady} shows that TaCo quickly finds an optimal task-scheduling scheme achieving stable latency around 20ms within less than 100 episodes no matter how the scaling of networks changes. Fig. \ref{fig:average latency with gap} shows the stability of the proposed GNN-based TaCo by independently retraining 10000 times. The TaCo offers an efficient scheduling mechanism that not only facilitates the identification of an optimal or suboptimal arrangement scheme but also minimizes the error gap, particularly when applied to larger networks. 
+
+\highlight{Fig. \ref{fig: actor_loss_plot} illustrates the convergence of the average loss among 10 thousand times retraining in dynamic scaling ECN environments. Given a dynamic ECN environment with scaling nodes that $\{3, 5, 7, 10, 15, 20, 24, 27, 32\}$. Even though the initial loss is high and some fluctuations appear at first, the loss quickly converges to an optimal level within 50 episodes, whose trend is similar to the latency reduction in Fig. \ref{fig:latency_steady} and Fig. \ref{fig:latency_steady}. The fluctuation at around 20$\thicksim$30 episodes is due to the randomness of the network environment and the random initial parameters of the GNN. As a result, our proposed TaCo can converge to an optimal level quickly, demonstrating robustness in scheduling network resources and inference tasks even in the dynamic network environment.}
+
+By incorporating these analyses, we aim to provide a more comprehensive evaluation of TaCo, ensuring that readers have a thorough understanding of the framework's performance and capabilities.
+
+
+% \nocite{*}
+% \bibliography{re}
+% \bibliographystyle{IEEEtran}
+
+
+
+\end{document}
