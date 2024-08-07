@@ -1,0 +1,732 @@
+% An example for the ar2rc document class.
+% Copyright (C) 2017 Martin Schroen
+% Modifications Copyright (C) 2020 Kaishuo Zhang
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+\documentclass{ar2rc}
+
+% textbox
+\usepackage[most]{tcolorbox}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\title{QoE Optimization for Virtual Reality Services in Multi-RIS-Assisted Terahertz Wireless Networks}
+\author{Yuyin Ma, Kaoru Ota, Mianxiong Dong}
+\journal{IEEE JSAC}
+\doi{Paper ID: \#86 (1570895341)}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We greatly appreciate the Editor-in-Chief, Editor, Associate Editor, and reviewers for their detailed and valuable comments, which have greatly improved the quality of our paper. We have carefully responded to all the comments from the reviewers in a point-to-point. Also, for the convenience of the review, revisions have been highlighted in yellow in the revised manuscript.
+
+% \section{Associate Editor}
+% \textbf{Comments to the Authors:} (There are no comments)
+
+% \textbf{Response to Associate Editor:} Thank you sincerely for all the support you have given to the possible publication of this manuscript.
+
+\section{Reviewer \#1}
+
+\textbf{Comments to the Authors:}
+
+\noindent This paper proposes a solution that integrates Reflecting Intelligent Surface (RIS), Terahertz (THz), and Mobile Edge Computing (MEC) technologies to optimize the quality of service (QoE) for users in VR wireless networks. Specifically, the solution proposes an Alternative Optimization (AO) method and a rendering capacity method based on user-attention-object to jointly optimize the passive beamforming matrix at the RIS, the transmit power among the VR users, and the rendering capacity resource to maximize the QoE.
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 1},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Positives: This paper proposes a novel framework that utilizes multi-RIS to improve the QoE of users in indoor VR wireless THz networks. This framework is significant because it integrates promising technologies such as RIS, MEC, and THz in the VR scenario.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you very much for your careful and thorough reading of this manuscript and for the thoughtful and constructive suggestions, which help to improve the quality of this manuscript.
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 2},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Negatives: The detailed description of VR scenario is lacking in the current version. Moreover, some symbols in the paper should be explained.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful comments. In the revised manuscript, we should do a more detailed description of the system model for the VR scenario.
+
+\textcolor{blue}{Fig. 2 illustrates an indoor VR scenario for providing virtual games, meetings, and travel. To satisfy the requirements of low latency and high data rate, we focus on deploying multiple RISs at the wall to assist the indoor wireless communication between one AP and multiple VR users. Specifically, during the downlink transmission, the AP transmits various types of data (graphics, sound, and visual) to the VR device via RISs, enabling immersive visual, auditory, and interactive experiences. During the uplink transmission, the VR device transmits data (position, posture, and abnormal information) to the AP assisted by RISs, providing feedback on user interaction, status, and other relevant information [29]. Each RIS consists of $N$ reflective elements.
+One AP with $M$ antennas is associated with a rich-resource edge computing server and several single-antenna VR users. An intelligent digital controller connects the RIS for operating phase shifts and communicates with MEC via a wired link.}
+Let $\mathcal{K} = \{1, 2, \dots, K\}$, $\mathcal{L} = \{ 1, 2, \dots, L \}$, and $\mathcal{N} = \{ 1, 2, \dots, N \}$ indicate the collections of VR users, RISs, and reflective elements, respectively. 
+
+\textcolor{blue}{[29] X. Ge, L. Pan, Q. Li, G. Mao, and S. Tu, “Multipath cooperative communications networks for augmented and virtual reality transmission,” IEEE Transactions on Multimedia, vol. 19, no. 10, pp. 2345–2358, 2017}
+
+Additionally, we explained symbols in the revised manuscript as follows.
+
+\textcolor{blue}{The Signal-to-Interference-plus-Noise Ratio (SINR) represents the ratio of the desired signal power to the combined interference and noise power, the SINR of $k$th VR user for the uplink transmission is given by}
+
+Meanwhile, a similar situation prevails in the indoor environment with complicated obstacles, and line-of-sight (LoS) communication links will be obstructed by walls, furniture, etc. 
+\textcolor{blue}{The LoS link refers to a wireless communication scenario where there is a direct and unobstructed line-of-sight between the AP and VR users. }
+
+On the contrary, the Non-Line-of-Sight (NLoS) communications between the AP and the VR user are established by RIS.
+\textcolor{blue}{The NLoS refers to a wireless communication scenario with no direct LoS between the AP and the VR user.}
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 3},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Although the paper is focused on VR scenarios, the system model description is not closely related to the VR environment. Therefore, the authors should provide a more detailed description of the model, especially in regards to its relevance to VR.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for this suggestion. Detail of the response to this suggestion is presented in response to the first Reviewer's second comment. 
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 4},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Equation (5) is difficult to understand, especially regarding the differences between $\phi_{l,i}, \theta_{l,i}, \varphi_{l,i}$. The authors should provide a more detailed explanation.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for pointing out this problem in the manuscript. We are sorry that notions $\phi_{l,i}, \theta_{l,i}, \varphi_{l,i}$ are not clear in the original manuscript. According to your comment, We have revised the manuscript as follows.
+
+\textcolor{blue}{In the case of slow and flat Rician fading channels, the baseband signal at the AP is expressed as}
+
+{\color{blue}
+\begin{equation}
+\label{up_SINR_01}
+    R_k^{up} = \sqrt{p_k} \left( \sum_{l=1}^L   \sqrt{P_{loss}^{l}} \left( \sum_{i=1}^{N} h_{l,i}^{UR} e^{ j \phi_{l,i} } h_{l,i}^{RA } \right) \right)x_k^{up} + \mathbf{n}_k^{up}
+\end{equation}
+where $\phi_{l,i}$ represents the phase shifts induced by $i$th reflective element of $l$th RIS. The channel are modeled as $h_{l,i}^{UR} = \alpha_{l,i} e^{ -j \theta_{l,i} }$ and $h_{l,i}^{R A} = \beta_{l,i} e^{ -j \varphi_{l,i} } $, representing the transmission from the VR user to the $i$th element of the $l$th RIS, and from $i$th element of $l$th RIS to the AP, respectively. Here, $l=1,2, \ldots, L$ and $i=1,2, \ldots, N$. Additionally, $\alpha_{l, i}$, $\beta_{l, i}$ denote the channel amplitudes of $i$th element of $l$th RIS, while $\theta_{l, i}$ and $\varphi_{l, i}$ represent the channel phase shifts from the VR user to the $i$th element of $l$th RIS and from $i$th element of $l$th RIS to the AP, respectively.} \textcolor{blue}{Therefore, \eqref{up_SINR_01} can be expressed as }
+
+{\color{blue}
+\begin{equation}
+\label{up_SINR_1}
+    R_k^{up} = \sqrt{p_k} \left( \sum_{l=1}^L   \sqrt{P_{loss}^{l}} \left( \sum_{i=1}^{N} \alpha_{l,i} \beta_{l,i}  e^{ j\Delta \Phi_{l,i}^{up} } \right) \right)x_k^{up} + \mathbf{n}_k^{up}
+\end{equation}
+where $\Delta \Phi_{l,i}^{up} = \phi_{l,i} - \theta_{l,i} - \varphi_{l,i}$ represents the phase difference term. Therefore, the instantaneous SINR at the AP is expressed as }
+
+\begin{equation}
+\label{up_SINR_2}
+    R_k^{up} = \frac{ {\left| \sum_{l=1}^L \sqrt{P_{loss}^{l}} \left( \sum_{i=1}^{N} \alpha_{l,i} \beta_{l,i}  e^{j\Delta \Phi_{l,i}^{up}} \right) \right|} ^2 p_k }{N_0}
+\end{equation}
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 5},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The authors should provide a detailed explanation for why the phase shifts of reflecting elements can be represented as equation (23b).
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your careful review of our manuscript. We apologize that equation (23b) ((24b) in the revision) is not clear. We have given a more detailed description of equation (23b) in the revision as follows.
+
+$\mathbf{u}_k^{}\in \mathbb{C}^ {1 \times M}$ denotes the beamforming matrix at the $k$th user, which is equal to $\frac{\mathbf{G}_l^{up} \mathbf{\Phi}_l^{up} \mathbf{H}_{k,l}^{up} + \mathbf{h}_k^{up}}{\left \| \mathbf{G}_l^{up} \mathbf{\Phi}_l^{up} \mathbf{H}_{k,l}^{up} + \mathbf{h}_k^{up} \right \|}$ and satisfies $\mathbb{E} \left[ { \left| \mathbf{u}_{k} \right|}^2 \right]=p_k$. 
+And $\mathbf{n}_{k}^{up} \sim \mathcal{CN} (0, N_0)$ means the additive Gaussian white noise, where $N_0$ is the total noise power, 
+{\color{blue}and $\mathbf{\Phi}_l^{up} \triangleq {\rm diag} \{ \Theta_1^{up}, \Theta_2^{up}, \ldots, \Theta_N^{up} \}, \in \mathbb{C}^{N \times N}$, denotes a diagonal matrix. Here, $\Theta_n^{up} \in \mathcal{C} \triangleq {\left\{ {\rm exp} \left( \frac{j2 \pi m}{2^c} \right) \right\}}_{m=0}^{m=2^{c-1}}$ represents the set of available phase shift values for the reflective elements, where $m$ is the phase shift index and $c$ denotes the phase resolution in bits [31].
+
+[31] C. Huang, G. C. Alexandropoulos, A. Zappone, M. Debbah, and C. Yuen, “Energy efficient multi-user miso communication using low resolution large intelligent surfaces,” in 2018 IEEE Globecom Workshops (GC Wkshps). IEEE, 2018, pp. 1–6.
+}
+
+where $x_q^{NLoS} \sim \mathcal{CN} (0, 1)$ is the transmission data symbol at the $q$th user located in NLoS region, $\mathbf{H}_{q,l}^{d} \in \mathbb{C}^ {1 \times N}$ denotes the channel gain between the $l$th RIS and $q$th VR user, $\mathbf{G}_l^{d} \in \mathbb{C}^ {N \times M}$ denotes the channel gain between the $l$th RIS and AP, $\mathbf{u}_q^{NLoS} \in \mathbb{C}^ {M \times 1}$ is the beamforming matrixes at the $q$th user, which is equal to $\frac{\mathbf{H}_{q,l}^{d} \mathbf{\Phi}_l^{d} \mathbf{G}_l^{d}}{\left \| \mathbf{H}_{q,l}^{d} \mathbf{\Phi}_l^{d} \mathbf{G}_l^{d} \right \|}$,  $\mathbf{n}_{q} \sim \mathcal{CN} (0, \delta^2 \mathbf{I}_M)$ means the additive Gaussian white noise. 
+\textcolor{blue}{And $\mathbf{\Phi}_l^{d} \triangleq {\rm diag} \{ \Theta_{1}^{d}, \Theta_{2}^{d}, \ldots, \Theta_{N}^{d} \}, \in \mathbb{C}^{N \times N}$ denotes a diagonal matrix.}
+
+Meanwhile, Equation 23(b) is revised as follows.
+
+\begin{align}
+\textbf{(P0)}  & \mathop{\rm{max}}\limits_{\mathbf{P}, \mathbf{\Phi}, \mathbf{\Phi_1}, \mathbf{I}} \quad  \sum_{k \in \mathcal{K}} QoE_k \label{P0} \ \   \\
+s.t. \quad
+& {\rm Tr} \left[ \sum_{l=1}^L \left(\mathbf{g}_l^+ \mathbf{P}  {\left(  \mathbf{g}_l^+  \right)}^H  \right)  \right] \leq P, \tag{\ref{P0}{a}} \label{P0a}\\
+% & {\left| \mathbf{\Phi}_l(m,m) \right| }^2  = 1, \  l \in \mathcal{L}, \  m \in \mathcal{M},  \tag{\ref{P0}{b}} \label{P0b} \\
+% & p_{loss}^l < p_{th}^{loss}, \  l \in \mathcal{L} , \tag{\ref{P0}{c}} \label{P0c} \\ 
+& {\color{blue} \Theta_n  =  \left\{ 1, e^{j2^{1-c}\pi}, \ldots, e^{j2\pi (2^c-1)/2^c} \right\}, c=1,2, \cdots}  \tag{\ref{P0}{b}} \label{P0b} \\
+& I_{k,n}^r \geq I_{th}^r, \ k \in \mathcal{K}, \tag{\ref{P0}{c}} \label{P0c} \\
+& \sum_{k \in \mathcal{K}} \sum_{n=1}^{N_{ob}} I_{k,n}^r \leq I_{all}^r, \ k \in \mathcal{K},  \tag{\ref{P0}{d}} \label{P0d} \\
+& T_{up}+T_{render}+T_{down} < T_{th}   . \tag{\ref{P0}{e}} \label{P0e} 
+\end{align}
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 6},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+To ensure the accuracy of system model, it is important to carefully examine the derivation of equations for any mistakes, inconsistencies, or incorrect assumptions. The authors should review equation (9) as there seems to be an error. 
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful suggestions. The reviewer is right, and we have revised the error in equation (9) (eq. (10) in the revision) as follows.
+
+{\color{blue} 
+\begin{equation}
+\label{V[A]}
+VAR\left[A \right] = \left(\sum_{l=1}^L N_l P_{loss}^l \right) \left(1- \frac{\pi^2  { \left( L_{1/2} \left(- \frac{K^2}{K+1} \right) \right) } ^4 }{16 (K+1)^2} \right)
+\end{equation}
+}
+
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 1: Comment 7},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Why does this paper adopt a two-stage optimization method? And what are the differences between the proposed method and existing works that use a single-stage optimization method?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent We thank the reviewer for pointing out this issue. In the manuscript, we aim to maximize the QoE among VR users regarding objective and subjective factors by jointly optimizing the passive beamforming at RISs in uplink/downlink, the transmit power allocation among virtual objects, and the rendering capacity allocation. To solve this problem, we decompose the optimization problem into two stages: stage-1 aims to minimize uplink BER and maximize downlink data rate, while stage-2 aims to maximize rendering resource allocation among virtual objects. 
+The single-stage method is significantly limited compared to the two-stage method, as it cannot simultaneously optimize multiple variables to enhance system performance. In the manuscript, simulations demonstrate that the two-stage method outperforms other typical single-stage methods, including \textsl{\texttt{No-Passive}}, \textsl{\texttt{No-power}}, and \textsl{\texttt{No-Rendering}} in terms of performance. 
+
+Furthermore, methods of existing works [15] and [19] have mainly focused on optimizing the objective experience of VR users while neglecting the subjective experience. For example, in [15], the delay and reliability of VR services in THz cellular networks were explored, and the end-to-end (E2E) delay expression was derived to demonstrate that VR services achieve higher reliability and data rate by providing high bandwidth and balancing the proximity of the user to the small base station (SBS). In [19], a two-tandem queue method was applied to derive the expression and probability distribution function (PDF) of the E2E delay and reliability in THz networks, which showed that increasing the bandwidth in indoor areas improves the reliability of the VR user's experience. However, our proposed method in this paper aims to leverage a promising RIS technology to enhance the QoE of VR users in terms of objective and subjective perspectives. Therefore, within the framework of the proposed model, a two-stage approach is more suitable.
+
+[15] C. Chaccour, R. Amer, B. Zhou, and W. Saad, "On the reliability of wireless virtual reality at terahertz (thz) frequencies," in 2019 10th IFIP International Conference on New Technologies, Mobility and Security (NTMS). IEEE, 2019, pp. 1–5.
+[19] C. Chaccour, M. N. Soorki, W. Saad, M. Bennis, and P. Popovski, "Can terahertz provide high-rate reliable low-latency communications for wireless vr?" IEEE Internet of Things Journal, vol. 9, no. 12, pp. 9712–9729, 2022.
+
+We have described the advantages of the two-stage method in the manuscript.
+
+\textcolor{blue}{In contrast to other approaches, our proposed method quantifies the QoE among VR users from objective and subjective perspectives while jointly optimizing multiple variables to enhance the performance of the system.}
+
+
+Thank you once again for your careful review and professional comments, We believe these modifications will significantly enhance the quality and impact of our paper.
+
+\section{Reviewer \#2}
+\textbf{Comments to the Authors:}
+
+\noindent This paper focuses on optimizing the QoE for multiple users in indoor environments using a multi-reconfigurable intelligent surface (RIS)-assisted THz wireless VR communication system. The paper proposes a two-stage optimization workflow to address challenges such as signal attenuation and interaction delays. The contributions include the design of a multi-RIS-assisted THz wireless VR network, maximizing QoE through optimization algorithms, and conducting extensive simulations to analyze the impact of various parameters on downlink transmission rate, uplink BER, and QoE.
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 1},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Positives: Main reasons to accept the paper:
+
+- Its novelty and significance in addressing the integration of MEC, RISs, and THz networks for VR services
+
+- Its relevance in tackling important challenges in VR such as signal attenuation and interaction delays
+
+- Its rigorous approach with a two-stage optimization workflow. 
+
+Overall, the positives dominate the negatives, making it a strong candidate for acceptance.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you very much for your careful reading and constructive comments. We have thought over and improved the manuscript accordingly. 
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 2},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Negatives: There are no obvious reasons not to accept the paper. However, the paper needs clarification on some technical content and thorough proofreading.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent We appreciate your valuable comments, as it greatly contributes to the quality of this paper.  Below is our detailed response to your comments.
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 3},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The paper considers three key performance indicators without justification. Why these three and are they representative?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful suggestions. An important insight is that most VR services are user-oriented, which prompts us to explore how to design user-centric VR systems [36]. The QoE, as a significant performance indicator, is used to measure user experience from a subjective and objective perspective and is required to satisfy high data rate, low delay, and high reliability in the wireless VR system [11]. 
+
+This paper considers the uplink Bit Error Rate (BER) and downlink data rate as objective performance indicators that impact the interaction between virtual elements and the natural world in VR services. In general, VR interaction latency comprises uplink transmission latency, MEC rendering latency, and downlink transmission latency. However, since the Field of View (FoV) size remains constant for different viewpoints, rendering latency remains consistent. Additionally, uplink transmission data is small, resulting in negligible uplink transmission latency. In contrast, the uplink data BER significantly affects the performance of VR systems. Moreover, VR users' subjective experience, like sickness, is a considerably important indicator [37]. Therefore, we choose the representative subjective experience of users, downlink transmission rate, and uplink BER to indicate QoE. 
+
+In the revised manuscript, we provide a more detailed explanation for selecting three indicators.
+
+\textcolor{blue}{An important insight is that VR services are predominantly user-oriented, prompting the exploration of designing user-centric VR systems [36]. The BER and downlink data rate are objective performance indicators impacting the interaction between virtual elements and the natural world in VR services. Meanwhile, VR users' subjective experience is a considerably important indicator [37]. Therefore, this paper focuses on three key performance indicators to formulate the QoE in VR systems, i.e., the uplink BER $P_e^{k}$, the downlink data transmission rate $R_k$, and the user's subjective experience $S_k$.}
+
+[11] G. Zheng and L. Yuan, “A review of qoe research progress in metaverse,” Displays, p. 102389, 2023.
+
+[36] H. Du, J. Wang, D. Niyato, J. Kang, Z. Xiong, X. S. Shen, and D. I. Kim, “Exploring attention-aware network resource allocation for customized metaverse services,” IEEE Network, 2022.
+
+{\color{blue} [37] Du H, Liu J, Niyato D, et al. Attention-aware resource allocation and QoE analysis for metaverse xURLLC services[J]. IEEE Journal on Selected Areas in Communications, 2023.}
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 4},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Metaverse service is first mentioned in the problem formulation. It should be introduced in the first section of the paper.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for pointing out this problem. We wholeheartedly agree with your suggestion. To better understand the system model in this paper, we uniformly replace the metaverse service with the VR service. In the revision, we modify the content about the metaverse service.
+
+\textcolor{blue}{In VR services, three meaningful feelings, namely the feeling of presence (i.e., resolution, frame rate, refresh rate), the feeling of interaction (i.e., tracking sensor, operation delay, response time), and the feeling of pleasure (i.e., cybersickness, scenery, sensory mismatch), are key service indicators associated with VR performance.}
+
+\textcolor{blue}{As objective performance indicators, the uplink BER and downlink data transmission rate affect the interaction between the virtual elements and the natural world. However, users' subjective experience becomes the primary performance indicator in VR services. Unlike traditional ultra-reliable and low-latency communications (URLLC), the focus shifts to users' subjective perceptions. Therefore, this paper investigates users' subjective perceptions determined by the rendering quality.} 
+
+\textcolor{blue}{To effectively reflect the user's subjective experience within the VR service, the Weber-Fechner Law is employed to deduce the subjective feelings of the user.}
+
+From (23), \textcolor{blue}{it is evident that higher transmission rates, lower BER, and a comfortable subjective experience lead to an improved QoE for VR users.} 
+
+\textcolor{blue}{Specifically, the QoE is maximized by jointly optimizing the passive beamforming vectors at uplink/downlink transmission, the transmit power allocation for users, and rendering capacity allocation among all the virtual objects.}
+
+\textcolor{blue}{This observation highlights that an optimization algorithm based on user-object-attention can enhance the user experience in VR services.}
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 5},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+To get the average uplink BER, the generic BER expression of for binary phase shift keying (BPSK) signaling is considered. Why? The uplink signal is modulated by BPSK?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your valuable comments. We appreciate your time and effort in reading and evaluating our work. In this manuscript, we consider the generic BER expression for BPSK signaling, mainly because simulation is performed using BPSK. In the simulation, we do a detailed explanation.
+
+\textcolor{blue}{Firstly, we evaluate the effectiveness of RIS in reducing the uplink BER for indoor THz wireless VR systems, where BPSK is employed.} Fig. 4 shows that all cases exhibit the same trend, whereby BER performance decreases with increasing SNR. 
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 6},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The paper discusses a bit on MEC rendering and it proposes to allocate edge server rendering resources based on VR user-object-attention. Please explain user-object-attention and how exactly the edge server is allocated. 
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your thoughtful suggestions. In the manuscript, the user-object-attention value is the dataset, referred to as attention-aware in [36]. Existing datasets used in VR research primarily focus on images and videos. However, they have several limitations: 1) Not all images suit customized services. 2) Observers do not view all images individually (i.e., they are grouped to view different sets of images);  3) Segmentation labels are manually annotated, resulting in multiple labels for one object. To address these drawbacks, [36] developed a user-object-attention dataset. The process involves image data preprocessing, object segmentation labels using K-Net, scene grouping using the KNN algorithm, and attention value calculation to identify the objects of user interest. Subsequently, more rendering resources will be allocated to the objects the user is interested in, as shown in Algorithm \ref{alg3}. In the revised manuscript, we provide a detailed explanation of user-object-attention values and the resource allocation of edge servers.
+
+\begin{algorithm}
+\caption{Rendering capacity allocation with user-object-attention values.} 
+\label{alg3}
+\begin{algorithmic}[1] %这个1 表示每一行都显示数字
+\REQUIRE ~~ \\ $ I_{all}^r, I_{th}^r, \mathbf{Q}=\{Q_{k,1}, Q_{k,2}, \dots, Q_{k,N_{ob}} \}$
+\ENSURE ~~\\  $\mathbf{I}^r = \{ I_{k,1}^{r \ \textbf{*}}, I_{k,2}^{r \ \textbf{*}}, \dots, I_{k,N_{ob}}^{r \ \textbf{*}} \}$
+\STATE \textbf{Initialization:} $j=1, s_1= \left[ \ \right], s_2= \left[ \ \right], s_3= \left[ \ \right]$,  and $I_{k,n}^{r \ \textbf{*}} = Q_{k,n} \frac{1}{\kappa^*} $. \\
+\STATE Calculate $\kappa^{\textbf{*}} = \sum_{n=1}^{N_{ob}} Q_{k,n} / I_{all}^r $, \  $I_{k,n}^{r \ \textbf{*}} = Q_{k,n} / \kappa^{\textbf{*}}$ for $\forall n$.
+
+\WHILE{the minimum of $I_{k,n}^{r \ \textbf{*}} < I_{th}^r$}
+\STATE $s_1[j] \leftarrow$ the minimum of $I_{k,n}^{r \ \textbf{*}}$. \\
+\STATE $s_2[j] \leftarrow $ the user-object-attention values corresponding to $s_1[j]$ . \\
+\STATE $s_3[j] \leftarrow $ the index corresponding to $s_1[j]$ . \\
+\STATE Update $\kappa^{\textbf{*}} = \sum_{n=1}^{N_{ob}} \left( Q_{k,n} - \sum s_2  \right) / \left( I_{all}^r - j \times I_{th}^r \right) $. \\ 
+\STATE Update $I_{k,n}^{r \ \textbf{*}} = Q_{k,n} / \kappa^{\textbf{*}}$ for $\forall n$. \\
+
+\FOR{temp = $1:j$}
+\STATE $n \leftarrow s_3[temp]_{th}$, $I_{k,n}^{r \ \textbf{*}} = I_{th}^r$.
+\ENDFOR
+
+\STATE $j=j+1$.
+\ENDWHILE
+\RETURN the optimal rendering capacity allocation scheme $ I_{k,1}^{r \ \textbf{*}}, I_{k,2}^{r \ \textbf{*}}, \ldots, I_{k,N_{ob}}^{r \ \textbf{*}} $.
+\end{algorithmic}
+\end{algorithm}
+
+\textcolor{blue}{
+In this paper, we propose a rendering resource allocation algorithm that leverages user-object-attention values obtained from the attention-aware dataset [36] to enhance rendering capabilities and optimize computing resources. The process of obtaining the user-object-attention dataset involves image data preprocessing, virtual object segmentation labels, scene grouping, and attention value calculation. We find that users demonstrate varying attention values towards different virtual objects during the VR service experience. Objects that capture higher attention values, indicated by longer eyeball fixation times, are allocated more rendering resources.
+}
+
+\textcolor{blue}{[36] H. Du, J. Wang, D. Niyato, J. Kang, Z. Xiong, X. S. Shen, and D. I. Kim, “Exploring attention-aware network resource allocation for customized metaverse services,” IEEE Network, 2022}
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 7},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+It is not clear the impact of user mobility on QoE and overall performance.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for carefully reviewing our manuscript and requesting further clarification. In the manuscript, we focus on maximizing the QoE by optimizing multiple variables when the VR users are stationary. Furthermore, user mobility has little impact on system performance since we can re-optimize the phase shifts, transmission power, rendering capacity allocation, etc., to maximize QoE when the users are in motion. We do a detailed description in the revision.
+
+\textcolor{blue}{Note that user mobility has little impact on system performance since we can re-optimize the phase shifts, transmission power, rendering capacity allocation, etc., to maximize QoE when the users are in motion. }
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 8},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Would it be possible to use adaptive methods from DNN to solve the formulated non-convex optimization problem? What are the advantages of the proposed decomposition algorithms?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your valuable comments. DNN (Deep Neural Network) comprises an input layer, one or more hidden layers, and an output layer. Each hidden layer consists of multiple interconnected neuron nodes utilizing weight parameters. Nonlinear transformations are applied to the output of nodes in the previous layer using activation functions. By leveraging multiple hidden layers, DNN can learn and extract high-level features, resulting in predictions at the output layer. DNN excels in automatically discovering and learning complex patterns and features within input data. However, DNN also presents several challenges and limitations. Firstly, training DNN typically requires significant labeled data and computing resources. Secondly, the complexity of DNN models leads to large parameter space, increasing the risk of overfitting. Additionally, the training process of DNNs is time-consuming and sensitive to initial parameter selection and hyperparameter tuning. In the manuscript, as we do not acquire RIS for our study, the DNN method is unsuitable for training small-scale experimental data. However, in the future, upon acquiring RIS, we will obtain a significant volume of data in the real world. This will enable the utilization of DNN algorithms for solving optimization problems.
+
+Furthermore, methods of existing works [15] and [19] have mainly focused on optimizing the objective experience of VR users while neglecting the subjective experience. For example, in [15], the delay and reliability of VR services in THz cellular networks were explored, and the end-to-end (E2E) delay expression was derived to demonstrate that VR services achieve higher reliability and data rate by providing high bandwidth and balancing the proximity of the user to the small base station (SBS). In [19], a two-tandem queue method was applied to derive the expression and probability distribution function (PDF) of the E2E delay and reliability in THz networks, which showed that increasing the bandwidth in indoor areas improves the reliability of the VR user's experience. However, our proposed method in this paper aims to leverage a promising RIS technology to enhance the QoE of VR users in terms of objective and subjective perspectives. Therefore, within the framework of the proposed model, a two-stage approach is more suitable.
+
+[15] C. Chaccour, R. Amer, B. Zhou, and W. Saad, "On the reliability of wireless virtual reality at terahertz (thz) frequencies," in 2019 10th IFIP International Conference on New Technologies, Mobility and Security (NTMS). IEEE, 2019, pp. 1–5.
+[19] C. Chaccour, M. N. Soorki, W. Saad, M. Bennis, and P. Popovski, "Can terahertz provide high-rate reliable low-latency communications for wireless vr?" IEEE Internet of Things Journal, vol. 9, no. 12, pp. 9712–9729, 2022.
+
+We have described the advantages of the proposed decomposition algorithm in the manuscript.
+
+\textcolor{blue}{In contrast to other approaches, our proposed method quantifies the QoE among VR users from objective and subjective perspectives while jointly optimizing multiple variables to enhance the performance of the system.}
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 9},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+In the simulation section, more justification should be given for the chosen simulation parameters. Are the chosen values realistic and come from credible sources?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful suggestions. In the revised manuscript, we do a detailed description for simulation parameters.
+
+Unless otherwise noted, the simulation settings are as follows. \textcolor{blue}{The user-object-attention data obtained from [36] comprises 1,000 images, encompassing 96 distinct types of objects, with attention values provided by 30 users for each object. For our analysis, we randomly select 10 VR users. Additionally, considering the real-world context, we simulate an indoor office scene with $15$m$\times 15$m$\times 3$m, where the number of VR users $K=10$, the number of RIS $L=7$, the reflective elements $N=32$ and one AP, the top view is shown in Fig. 3. Given the confined nature of the indoor environment, we simulate the AP with 2 antennas ($N_a=2$) and each RIS with an identical set of reflective elements ($N=32$).} 
+
+[36] H. Du, J. Wang, D. Niyato, J. Kang, Z. Xiong, X. S. Shen, and D. I. Kim, “Exploring attention-aware network resource allocation for customized metaverse services,” IEEE Network, 2022.
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 10},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+In Fig. 4, it would be more interesting to see the BER performance verse a combination of L and N. 
+- The experiments are only simulated using synthetic data. Would it be possible to use real-world measurements/data for performance evaluation?
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent  Thank you for carefully reviewing our manuscript and requesting further clarification. We would like to utilize real-world data for our research. Our laboratory is equipped with VR hardware devices; however, the high cost of RIS in Japan makes it unaffordable for us. In the future, upon acquiring the RIS, we will collect experimental data from a real-world environment instead of using synthetic data.
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 11},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The writing is plagued by strange phrasing that makes it hard to understand, especially in the technical part. There are quite a few grammar errors that need to fix.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your valuable and thoughtful comments. We apologize for the poor language of our manuscript. We worked on the manuscript for a long time, and the repeated addition and removal of sentences and sections obviously led to poor readability. We have now worked on both language and readability for language corrections. We really hope that the flow and language level have been substantially improved.
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 12},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Define abbreviations at first use, e.g., BER, NLoS, SINR.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful suggestions. In the revised manuscript, we have defined abbreviations.
+
+\textcolor{blue}{RISs possess the capability to manipulate the transmission of electromagnetic waves, exhibiting the promise to remodel the architecture and performance of THz wireless network systems and reduce the Bit Error Rate (BER), which is the number of bit errors occurring in a communication system relative to the total number of bits transmitted}.
+
+\textcolor{blue}{The Signal-to-Interference-plus-Noise Ratio (SINR) represents the ratio of the desired signal power to the combined interference and noise power, the SINR of $k$th VR user for the uplink transmission is given by}
+
+Meanwhile, a similar situation prevails in the indoor environment with complicated obstacles, and line-of-sight (LoS) communication links will be obstructed by walls, furniture, etc. 
+\textcolor{blue}{The LoS link refers to a wireless communication scenario where there is a direct and unobstructed line-of-sight between the AP and VR users. }
+
+On the contrary, the Non-Line-of-Sight (NLoS) communications between the AP and the VR user are established by RIS.
+\textcolor{blue}{The NLoS refers to a wireless communication scenario with no direct LoS between the AP and the VR user.}
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 2: Comment 13},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Formatting issues, e.g., "The MGF is expressed in (10) as shown at the bottom of this page. where s is the moment of the MGF" in breaking into two paragraphs.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your careful review of our manuscript. The reviewer is right, we have modified it in the revision.
+
+\textcolor{blue}{The MGF is expressed in (11) as shown at the bottom of the next page. 
+Where $s$ is the moment of the MGF, and we consider the generic BER expression of for binary phase shift keying (BPSK) signaling, the average uplink BER can be obtained as}
+
+Many thanks again for the reviewer's careful review of our submission and very professional comments that have considerably improved the quality of the paper.
+
+\section{Reviewer \#3}
+
+\textbf{Comments to the Authors:}
+
+\noindent The paper presents a novel framework for indoor multi-user multi-RIS-assisted THz wireless VR systems that aims to maximize QoE during the considered interaction latency. To achieve this objective, the paper formulates the problem and applies the Objective Function Conversion and Alternative Optimization (AO) method to solve the non-convex problem.
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 1},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Positives: The paper attempts to employ RIS technology to enhance the QoE of VR users is particularly relevant given the current interest in the metaverse, making this study a valuable contribution to the field.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+Thank you very much for your careful reading and constructive comments, which have greatly improved the overall quality of our paper.
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 2},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+Negatives: System model in the paper should provide more detailed description and assumptions. There is no other obvious negative points. Please refer my detailed comments in the other sections.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+% \noindent Thank you for this suggestion. Detail of the response to this suggestion is presented in response to the first Reviewer's second comment. All issues raised by the reviewer are carefully addressed. The detailed responses are given below.
+% 同reviewer1 comment 2
+
+\noindent Thank you for your insightful suggestions. In the revised manuscript, we do a more detailed description of the system model.
+
+\textcolor{blue}{Fig. 2 illustrates an indoor VR scenario for providing virtual games, meetings, and travel. To satisfy the requirements of low latency and high data rate, we focus on deploying multiple RISs at the wall to assist the indoor wireless communication between one AP and multiple VR users. Specifically, during the downlink transmission, the AP transmits various types of data (graphics, sound, and visual) to the VR device via RISs, enabling immersive visual, auditory, and interactive experiences. During the uplink transmission, the VR device transmits data (position, posture, and abnormal information) to the AP assisted by RISs, providing feedback on user interaction, status, and other relevant information [29]. Each RIS consists of $N$ reflective elements.
+One AP with $M$ antennas is associated with a rich-resource edge computing server and several single-antenna VR users. An intelligent digital controller connects the RIS for operating phase shifts and communicates with MEC via a wired link.}
+Let $\mathcal{K} = \{1, 2, \dots, K\}$, $\mathcal{L} = \{ 1, 2, \dots, L \}$, and $\mathcal{N} = \{ 1, 2, \dots, N \}$ indicate the collections of VR users, RISs, and reflective elements, respectively. 
+
+\textcolor{blue}{[29] X. Ge, L. Pan, Q. Li, G. Mao, and S. Tu, “Multipath cooperative communications networks for augmented and virtual reality transmission,” IEEE Transactions on Multimedia, vol. 19, no. 10, pp. 2345–2358, 2017}
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 3},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+In Section III, a multi-RIS-assisted THz wireless VR system model is proposed. However, the model descriptions are not clearly stated. For example, it is unclear whether user mobility is taken into consideration? Whether the location of RIS is fixed or not.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your constructive suggestions, your comments are invaluable in helping us improve our work. In the revised manuscript, we do a detailed description of the system model.
+
+% \textcolor{blue}{In this paper, we make the assumption that user is positioned in an 3D space and the RIS is fixed on the wall. However, it should be noted that the proposed method can also be applied for long-term QoE evaluation.}
+\textcolor{blue}{Furthermore, we assume that users are fixed in a 3D space, and the RISs are fixed on the wall. However, it should be noted that the proposed method can also be applied for long-term QoE evaluation.}
+
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 4},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+In Section III-B, what is “LoS area” and “NLoS area”, the authors should explain them.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your insightful comments. The reviewer is right, and we have explained them in the revision.
+
+\textcolor{blue}{In VR services, some user-related data (i.e., location, motion, and sound) are transmitted to edge servers through uplinks. Due to the mobility of VR users and the presence of indoor obstacles, users can be located in either LoS or NLoS areas. LoS and NLoS areas denote regions where communication with the BS is established through LoS and NLoS links, respectively.}
+
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 5},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The Section I introduction and the content depicted in Figure 1 are not aligned. The author should reorganize them for a better understanding.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for carefully reviewing our manuscript and requesting further clarification. In the revised manuscript, we modify Figure 1 and reorganize them, as shown below.
+
+To fill the aforementioned research gaps, this paper aims to optimize the QoE for multiple users in the indoor environment with multi-RIS-assisted THz wireless VR communication systems. To achieve this, the following questions must be solved:
+
+\textcolor{blue}{
+\begin{enumerate}
+\item How to design and implement the QoE maximization algorithm in a multi-RIS-assisted VR wireless network?
+\item How to quantify the QoE from objective and subjective perspectives?
+\item How to model the uplink and downlink transmissions channel in multi-RIS VR Terahertz networks?
+\end{enumerate}}
+
+\textcolor{blue}{In this paper, our investigation focuses on VR systems in the THz networks, RIS-assisted wireless networks, and VR implemented in RIS-assisted THz networks, as depicted in Fig. \ref{structure}. Furthermore, the integration of VR and RIS is vital for enhancing the VR user experience, given the tremendous potential of both technologies. From the perspective of VR users, achieving optimal objective performance and subjective experience is crucial. To address this, we propose an alternative optimization (AO) algorithm that simultaneously optimizes the phase shifts of reflective elements at the RIS side, the transmission power allocation for users, and the BER, while considering rendering capability based on user-object-attention values. The primary contributions of this paper can be summarized as follows.}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{./images/structure.pdf}
+\caption{ \textcolor{blue}{Structure and contributions of this paper. Part \uppercase\expandafter{\romannumeral1} introduces the scenario and system model, which includes uplink BER, downlink transmission rate, and MEC rendering. Part \uppercase\expandafter{\romannumeral2} presents the problem formulation and algorithm design. Part \uppercase\expandafter{\romannumeral3} demonstrates our proposed approach performance versus several simplified schemes regarding average data rate and QoE.}}
+\label{structure}
+\end{figure}
+
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 6},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+The paper title is “QoE Optimization for Virtual Reality Services in Multi-RIS-Assisted Terahertz Wireless Networks”, which is related to VR services, so authors should reference more works about VR in Introduction and Related work.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent Thank you for your valuable comments on our manuscript. In response, we have incorporated additional references in the revised version.
+
+\textcolor{blue}{In [14], the authors introduced a MEC-assisted wireless VR system, which employs the RNN approach to predict the Field of View (FoV) for each VR user in a real-time manner. Additionally, the rendering data is offloaded from the VR device to the MEC for processing, and the DRL method is employed to optimize the long-term QoE for the VR user.}
+
+\textcolor{blue}{In [18], the authors proposed a low-latency VR system assisted by UAV-BS, where the VR data is processed either at the UAV-BS or at the users before transmission, and an iterative algorithm with low complexity is introduced to minimize the maximum communication and computation delays for all VR users.}
+
+{\color{blue}
+[14] X. Liu, Y. Deng, “Learning-based prediction, rendering and association optimization for mec-enabled wireless virtual reality (vr) networks,” IEEE Transactions on Wireless Communications, vol. 20, no. 10, pp. 6356– 6370, 2021.
+
+[18] Y. Zhou, C. Pan, P. L. Yeoh, K. Wang, M. Elkashlan, B. Vucetic, and Y. Li, “Communication-and-computing latency minimization for uav-enabled virtual reality delivery systems,” IEEE Transactions on Communications, vol. 69, no. 3, pp. 1723–1735, 2020.
+}
+
+\begin{tcolorbox}[
+                    title={Reviewer 3: Comment 7},
+                    colback=gray!10,%gray background
+                    colframe=black,% black frame colour
+                    width=\linewidth,% Use 8cm total width,
+                    arc=1mm, auto outer arc,
+                    boxrule=0.5pt,
+                 ]
+There are some grammatical mistakes in this paper. For example, In Section II Related Work, “presented a THz wireless VR network by RIS-assisted…” should be “presented a RIS-assisted THz wireless VR network...”, and so on.
+\end{tcolorbox}
+
+\textbf{Response:}
+
+\noindent We apologize for the poor language of our manuscript. We worked on the manuscript for a long time, and the repeated addition and removal of sentences and sections obviously led to poor readability. We have now worked on both language and readability for language corrections. We really hope that the flow and language level have been substantially improved.
+
+Thank you once again for your insightful comments. We believe these modifications will significantly enhance the quality and impact of our paper.
+
+
+\end{document}
