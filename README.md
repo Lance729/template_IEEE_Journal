@@ -4,8 +4,6 @@ A brief intro to your paper goes here.
 
 ## Project Structure
 
-
-
 - `src/`：The original source files to your paper
 - `figures/`：include some figures you will refer
 - `docs/`：include some documents required
@@ -33,7 +31,7 @@ run <latexmk -pdf your_file.tex>
 
 
 
-## 联系方式
+## Connect to us
 
 - Author：lance kong
 - Email：lance.lz.kong@gmail.com
