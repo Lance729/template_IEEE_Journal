@@ -19,7 +19,9 @@ We recommend the linux system, especially the WSL2.
 
 ## How to use?
 
-run <latexmk -pdf your_file.tex>
+run <latexmk -pdf main.tex>
+
+if you work in chinese env, then run <latexmk -xelatex -bibtex main.tex>
 
 ## Contribute it
 
