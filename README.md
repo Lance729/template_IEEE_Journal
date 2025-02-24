@@ -1,49 +1,40 @@
-# 项目名称
+# Introduction
 
-简短的项目描述
+A brief intro to your paper goes here.
 
-## 目录结构
+## Project Structure
 
-描述项目的目录结构，可以包含以下内容：
 
-- `src/`：包含项目的源代码
-- `figures/`：包含项目使用的仿真图
-- `docs/`：包含项目的文档
-- `examples/`：包含项目的示例代码
 
-## 安装
+- `src/`：The original source files to your paper
+- `figures/`：include some figures you will refer
+- `docs/`：include some documents required
+- `examples/`：some necessary stuffs
 
-描述如何安装和配置项目的步骤，可以包含以下内容：
+## Install dependencies
 
-1. 克隆项目到本地：`git clone https://github.com/your-username/your-project.git`
-2. 进入项目目录：`cd your-project`
-3. 安装依赖项：`npm install`
+We recommend the linux system, especially the WSL2.
 
-## 使用
+1. clone this pro to local：`git clone https://github.com/your-username/your-project.git`
+2. get into：`cd your-project`
+3. (optional) If you don't have latex env, then execute：`sudo apt install texlive-full`
 
-描述如何使用项目，可以包含以下内容：
+## How to use?
 
-- 运行项目：`npm start`
-- 执行测试：`npm test`
+run <latexmk -pdf your_file.tex>
 
-## 贡献
+## Contribute it
 
-描述如何贡献到项目，可以包含以下内容：
-
-1. Fork 项目到你的仓库
-2. 创建一个新的分支：`git checkout -b feature/your-feature`
-3. 提交你的更改：`git commit -am 'Add some feature'`
-4. 推送到你的仓库：`git push origin feature/your-feature`
-5. 提交一个Pull Request
-
-## 许可证
-
-描述项目的许可证信息，可以包含以下内容：
+1. Fork this pro to your account
+2. Create a new branch：`git checkout -b feature/your-feature`
+3. Commit your change：`git commit -am 'Add some feature'`
+4. Push to your pro：`git push origin feature/your-feature`
+5. Push a merge request
 
 
 
 ## 联系方式
 
-- 作者：lance kong
-- 邮箱：lance.lz.kong@gmail.com
-- 主页：[Home page](https://lancelzkong.wixsite.com/scholarsite)
+- Author：lance kong
+- Email：lance.lz.kong@gmail.com
+- Homepage：[Home page](https://lancelzkong.wixsite.com/scholarsite)
